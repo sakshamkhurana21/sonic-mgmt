@@ -264,7 +264,7 @@
   - name: enable ComputeAI deployment
     set_fact:
       enable_compute_ai_deployment: true
-    when: "(hwsku in hwsku_list_compute_ai) and 'isolated' in topo"
+    when: "(hwsku in hwsku_list_compute_ai) and not (is_ixia_testbed) and 'isolated' in topo"
 
   - name: set default vm file path
     set_fact:
@@ -655,6 +655,7 @@
         generate_golden_config_db:
           topo_name: "{{ topo }}"
           port_index_map: "{{ port_index_map | default({}) }}"
+          hwsku: "{{ hwsku }}"
         become: true
 
       - name: Copy macsec profile json to dut
