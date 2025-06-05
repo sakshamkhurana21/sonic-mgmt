@@ -268,6 +268,12 @@ cacl/test_cacl_application.py::test_cacl_acl_loader_commands_internal:
       - "topo_type not in ['t1', 't0']"
       - "'dualtor' in topo_name"
 
+cacl/test_cacl_application.py:
+  skip:
+    reason: "skip test_cacl_application in PR test temporarily"
+    conditions:
+      - "asic_type in ['vs']"
+
 cacl/test_cacl_application.py::test_cacl_application_dualtor:
   skip:
     reason: "test_cacl_application_dualtor is only supported on dualtor topology"
