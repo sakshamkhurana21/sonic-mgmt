@@ -165,8 +165,8 @@ all:
           ansible_host: 10.64.246.128
           ansible_hostv6: 2a01:111:e210:b000::a40:f680
         vms29-1:
-          ansible_host: 10.64.247.52
-          ansible_hostv6: 2a01:111:e210:b000::a40:f734
+          ansible_host: 10.64.247.71
+          ansible_hostv6: 2a01:111:e210:b000::a40:f747
         vms29-2:
           ansible_host: 10.64.246.245
           ansible_hostv6: 2a01:111:e210:b000::a40:f6f5
@@ -288,16 +288,13 @@ fanout:
   hosts:
     str2-7260cx3-acs-root02:
       ansible_host: 10.3.146.104
-      ansible_hostv6: 
+      ansible_hostv6:
     str2-7260cx3-acs-fan-06:
       ansible_host: 10.3.146.176
       ansible_hostv6: 2a01:111:e210:3000::a03:92b0
     str2-7260cx3-acs-fan-07:
       ansible_host: 10.3.146.54
       ansible_hostv6: 2a01:111:e210:3000::a03:9236
-    str2-7260cx3-acs-8:
-      ansible_host: 10.3.146.255
-      ansible_hostv6: 2a01:111:e210:3000::a03:ffff
     str2-7260cx3-acs-fan-15:
       ansible_host: 10.3.146.213
       ansible_hostv6: 2a01:111:e210:3000::a03:92d5
@@ -360,9 +357,6 @@ fanout:
     str2-7260cx3-acs-fan-19:
       ansible_host: 10.3.146.156
       ansible_hostv6: 2a01:111:e210:3000::a03:929c
-    str2-7260cx3-acs-fan-20:
-      ansible_host: 10.3.146.165
-      ansible_hostv6: 2a01:111:e210:3000::a03:92a5
     str2-7260cx3-acs-fan-21:
       ansible_host: 10.3.146.217
       ansible_hostv6: 2a01:111:e210:3000::a03:92d9
@@ -444,12 +438,12 @@ fanout:
       ansible_hostv6: 2a01:111:e210:3000::a03:92e8
       os: sonic
     str2-8101-fanout-18:
-      ansible_host: 10.64.246.116
-      ansible_hostv6: 2a01:111:e210:b000::a40:f674
+      ansible_host: 10.3.146.169
+      ansible_hostv6: 2a01:111:e210:3000::a03:92a9
       os: sonic
     str2-8101-fanout-19:
-      ansible_host: 10.64.246.115
-      ansible_hostv6: 2a01:111:e210:b000::a40:f673
+      ansible_host: 10.3.146.168
+      ansible_hostv6: 2a01:111:e210:3000::a03:92a8
       os: sonic
     str2-8101-fanout-20:
       ansible_host: 10.3.146.209
@@ -465,14 +459,10 @@ sonic:
     mgmt_subnet_mask_length: 23
     mgmt_subnet_v6_mask_length: 64
   children:
-    sonic_stable:
-    sonic_latest:
     sonic_mlnx:
     sonic_arista:
     sonic_arista_Q32:
     sonic_arista_QX:
-    sonic_mlnx_3800:
-    sonic_mlnx_3800_50:
     sonic_mlnx_4600C:
     sonic_mlnx_4700:
     sonic_mlnx_4280_smartswitch:
@@ -537,31 +527,6 @@ sonic_mlnx:
         "0x2a": "128"
         "0x2b": "Mellanox"
         "0xfe": "0x846D53BD"
-
-sonic_mlnx_3800:
-  vars:
-    hwsku: ACS-MSN3800
-    iface_speed: 100000
-  hosts:
-    str2-sn3800-azd:
-      ansible_host: 10.3.146.183
-      ansible_hostv6: 2a01:111:e210:3000::a03:92b7
-      mgmt_subnet_mask_length: 24
-      model: MSN3800-CS2FO
-      serial: MT2002X14802
-      base_mac: 1C:34:DA:17:9D:00
-      syseeprom_info:
-        "0x21": "MSN3800"
-        "0x22": "MSN3800-CS2FO"
-        "0x23": "MT2002X14802"
-        "0x24": "1C:34:DA:17:9D:00"
-        "0x25": "01/14/2020 00:45:32"
-        "0x26": "0"
-        "0x28": "x86_64-mlnx_msn3800-r0"
-        "0x29": "2019.08-5.2.0016-115200"
-        "0x2A": "254"
-        "0x2B": "Mellanox"
-        "0xFE": "0x9AC3A8CC"
 
 sonic_mlnx_4600C:
   vars:
@@ -789,31 +754,6 @@ sonic_mlnx_4280_smartswitch:
           timeout: 300
           wait: 600
 
-sonic_mlnx_3800_50:
-  vars:
-    hwsku: Mellanox-SN3800-D112C8
-    iface_speed: 50000
-  hosts:
-    str2-sn3800-02:
-      ansible_host: 10.3.146.255
-      ansible_hostv6: 2a01:111:e210:3000::a03:ffff
-      mgmt_subnet_mask_length: 24
-      model: MSN3800-CS2ROS
-      serial: MT2029X06423
-      base_mac: 1C:34:DA:1F:8D:00
-      syseeprom_info:
-        "0x21": "MSN3800"
-        "0x22": "MSN3800-CS2ROS"
-        "0x23": "MT2029X06423"
-        "0x24": "1C:34:DA:1F:8D:00"
-        "0x25": "07/19/2020 15:31:36"
-        "0x26": "2"
-        "0x28": "x86_64-mlnx_msn3800-r0"
-        "0x29": "2019.11-5.2.0020-9600"
-        "0x2A": "254"
-        "0x2B": "Mellanox"
-        "0xFE": "0x0166B894"
-
 sonic_arista:
   vars:
     iface_speed: 100000
@@ -826,19 +766,23 @@ sonic_arista:
       hwsku: Arista-7050CX3-32S-C32
       model: DCS-7050CX3-32S-SSD
       serial: JPE20440285
-      base_mac: 94:8e:d3:05:34:e4
+      base_mac: 94:8e:d3:05:1b:1c
       syseeprom_info:
-        "0x21": "DCS-7050CX3-32S-SSD"
-        "0x22": "ASY0323106A0"
-        "0x23": "JPE20440285"
-        "0x24": "94:8e:d3:05:34:e4"
-        "0x25": "2020/01/01 00:00:00"
-        "0x26": "01"
-        "0x27": "01.00"
-        "0x28": "x86_64-arista_7050cx3_32s"
-        "0x2D": "Arista Networks"
-        "0x2E": "Aboot-norcal6-6.1.11-18938843"
-        "0x2F": "JPE20440285"
+        '0x21': 'DCS-7050CX3-32S-SSD'
+        '0x22': 'ASY0323106A0'
+        '0x23': 'JPE20440285'
+        '0x24': '94:8e:d3:05:1b:1c'
+        '0x25': '2020/01/01 00:00:00'
+        '0x26': '01'
+        '0x27': '01.00'
+        '0x28': 'x86_64-arista_7050cx3_32s'
+        '0x2a': '0xffff'
+        '0x2b': 'Arista Networks'
+        '0x2c': 'US'
+        '0x2d': 'Arista Networks'
+        '0x2e': 'Aboot-norcal6-6.1.11-18938843'
+        '0x2f': 'JPE20440285'
+        '0xfe': '0xdeadbeef'
     str2-7050cx3-acs-02:
       ansible_host: 10.3.146.187
       ansible_hostv6: 2a01:111:e210:3000::a03:92bb
@@ -1121,34 +1065,11 @@ sonic_arista_Q32:
       ansible_hostv6: 2a01:111:e210:3000::a03:9239
 
       mgmt_subnet_mask_length: 24
+
 sonic_arista_QX:
   vars:
     iface_speed: 40000
   hosts:
-    str2-7050qx-32s-acs-01:
-      ansible_host: 10.3.146.158
-      ansible_hostv6: 2a01:111:e210:3000::a03:929e
-      mgmt_subnet_mask_length: 24
-      hwsku: Arista-7050QX32S-Q32
-      model: DCS-7050QX-32S
-      serial: JPE15072340
-      base_mac: 00:1c:73:ce:6b:18
-      syseeprom_info:
-        "0x21": "DCS-7050QX-32S"
-        "0x22": "ASY0105904C0"
-        "0x23": "JPE15072340"
-        "0x24": "00:1c:73:ce:6b:18"
-        "0x25": "2015/02/18 08:48:03"
-        "0x26": "01"
-        "0x27": "02.00"
-        "0x28": "x86_64-arista_7050_qx32s"
-        "0x2A": "0xffff"
-        "0x2B": "Arista Networks"
-        "0x2C": "US"
-        "0x2D": "Arista Networks"
-        "0x2E": "Aboot-norcal4-4.0.7-13599834"
-        "0x2F": "JPE15072340"
-        "0xFE": "0xdeadbeef"
     str2-7050qx-32s-acs-02:
       ansible_host: 10.64.247.28
       ansible_hostv6: 2a01:111:e210:b000::a40:f71c
@@ -1171,30 +1092,6 @@ sonic_arista_QX:
         "0x2D": "Arista Networks"
         "0x2E": "Aboot-norcal4-4.1.1-13522936"
         "0x2F": "JPE20255843"
-        "0xFE": "0xdeadbeef"
-    str2-7050qx-32s-acs-03:
-      ansible_host: 10.3.146.167
-      ansible_hostv6: 2a01:111:e210:3000::a03:92a7
-      mgmt_subnet_mask_length: 24
-      hwsku: Arista-7050-QX-32S
-      model: DCS-7050QX-32S
-      serial: JPE20224213
-      base_mac: c0:d6:82:ef:0f:0f
-      syseeprom_info:
-        "0x21": "DCS-7050QX-32S"
-        "0x22": "ASY0105910E0"
-        "0x23": "JPE20224213"
-        "0x24": "c0:d6:82:ef:0f:0f"
-        "0x25": "2020/08/06 00:31:28"
-        "0x26": "01"
-        "0x27": "02.00"
-        "0x28": "x86_64-arista_7050_qx32s"
-        "0x2A": "0xffff"
-        "0x2B": "Arista Networks"
-        "0x2C": "US"
-        "0x2D": "Arista Networks"
-        "0x2E": "Aboot-norcal4-4.1.1-13522936"
-        "0x2F": "JPE20224213"
         "0xFE": "0xdeadbeef"
 
 sonic_arista64_100:
@@ -2482,8 +2379,8 @@ sonic_cisco_8101:
     iface_speed: 100000
   hosts:
     str2-8101-05:
-      ansible_host: 10.64.246.114
-      ansible_hostv6: 2a01:111:e210:b000::a40:f672
+      ansible_host: 10.3.146.167
+      ansible_hostv6: 2a01:111:e210:3000::a03:92a7
       mgmt_subnet_mask_length: 23
       model: 8101-32FH-O
       serial: FLM28230D72
@@ -2551,25 +2448,25 @@ sonic_cisco_8101_tornado:
     hwsku: Cisco-8101-V64
     iface_speed: 100000
   hosts:
-    str2-8101-01:
+    str2-8101c1-01:
       ansible_host: 10.3.146.250
       ansible_hostv6: 2a01:111:e210:3000::a03:92fa
       mgmt_subnet_mask_length: 24
       model: 8101-32FH-O-C01
-      serial: WZP28509E63
-      base_mac: 48:00:B3:A0:CA:96
+      serial: WZP28509E69
+      base_mac: 48:00:B3:A1:18:96
       syseeprom_info:
         "0x21": "8101-32FH-O-C01"
         "0x22": "000000"
-        "0x23": "WZP28509E63"
-        "0x24": "48:00:B3:A0:CA:96"
+        "0x23": "WZP28509E69"
+        "0x24": "48:00:B3:A1:18:96"
         "0x26": "0"
         "0x28": "x86_64-8101_32fh_o_c01-r0"
         "0x2A": "512"
         "0x2B": "Cisco"
         "0x2C": "US"
         "0x2D": "Cisco"
-        "0xFE": "0xDA7D0E1A"
+        "0xFE": "0x7C41E6E3"
       plt_reboot_dict:
         cold:
           timeout: 600
@@ -2583,25 +2480,25 @@ sonic_cisco_8101_tornado:
         platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
-    str2-8101-02:
+    str2-8101c1-02:
       ansible_host: 10.3.146.234
       ansible_hostv6: 2a01:111:e210:3000::a03:92ea
       mgmt_subnet_mask_length: 24
       model: 8101-32FH-O-C01
-      serial: WZP28489YD3
-      base_mac: 48:00:B3:A1:08:96
+      serial: WZP28509E5W
+      base_mac: 48:00:B3:A1:04:96
       syseeprom_info:
         "0x21": "8101-32FH-O-C01"
         "0x22": "000000"
-        "0x23": "WZP28489YD3"
-        "0x24": "48:00:B3:A1:08:96"
+        "0x23": "WZP28509E5W"
+        "0x24": "48:00:B3:A1:04:96"
         "0x26": "0"
         "0x28": "x86_64-8101_32fh_o_c01-r0"
         "0x2A": "512"
         "0x2B": "Cisco"
         "0x2C": "US"
         "0x2D": "Cisco"
-        "0xFE": "0xA87BA1CB"
+        "0xFE": "0x3662BB7C"
       plt_reboot_dict:
         cold:
           timeout: 600
@@ -2615,25 +2512,25 @@ sonic_cisco_8101_tornado:
         platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
-    str2-8101-03:
+    str2-8101c1-03:
       ansible_host: 10.3.146.231
       ansible_hostv6: 2a01:111:e210:3000::a03:92e7
       mgmt_subnet_mask_length: 24
       model: 8101-32FH-O-C01
-      serial: WZP28509E68
-      base_mac: 48:00:B3:A1:1C:96
+      serial: WZP28509E5S
+      base_mac: 48:00:B3:A0:F6:96
       syseeprom_info:
         "0x21": "8101-32FH-O-C01"
         "0x22": "000000"
-        "0x23": "WZP28509E68"
-        "0x24": "48:00:B3:A1:1C:96"
+        "0x23": "WZP28509E5S"
+        "0x24": "48:00:B3:A0:F6:96"
         "0x26": "0"
         "0x28": "x86_64-8101_32fh_o_c01-r0"
         "0x2A": "512"
         "0x2B": "Cisco"
         "0x2C": "US"
         "0x2D": "Cisco"
-        "0xFE": "0xA2F0E152"
+        "0xFE": "0x400EDB4E"
       plt_reboot_dict:
         cold:
           timeout: 600
@@ -2647,25 +2544,25 @@ sonic_cisco_8101_tornado:
         platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
-    str2-8101-04:
+    str2-8101c1-04:
       ansible_host: 10.3.146.220
       ansible_hostv6: 2a01:111:e210:3000::a03:92dc
       mgmt_subnet_mask_length: 24
       model: 8101-32FH-O-C01
-      serial: WZP28509E61
-      base_mac: 48:00:B3:A1:14:96
+      serial: WZP28489YD5
+      base_mac: 48:00:B3:A1:24:96
       syseeprom_info:
         "0x21": "8101-32FH-O-C01"
         "0x22": "000000"
-        "0x23": "WZP28509E61"
-        "0x24": "48:00:B3:A1:14:96"
+        "0x23": "WZP28489YD5"
+        "0x24": "48:00:B3:A1:24:96"
         "0x26": "0"
         "0x28": "x86_64-8101_32fh_o_c01-r0"
         "0x2A": "512"
         "0x2B": "Cisco"
         "0x2C": "US"
         "0x2D": "Cisco"
-        "0xFE": "0x2466A104"
+        "0xFE": "0x200C6EE7"
       plt_reboot_dict:
         cold:
           timeout: 600
