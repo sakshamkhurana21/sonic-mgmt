@@ -2216,6 +2216,12 @@ qos/test_tunnel_qos_remap.py::test_pfc_watermark_extra_lossless_standby:
       - "asic_type in ['broadcom']"
       - https://github.com/sonic-net/sonic-mgmt/issues/11271
 
+qos/test_voq_watchdog.py:
+  skip:
+    reason: "These tests only apply to cisco 8000 platforms."
+    conditions:
+      - "asic_type not in ['cisco-8000']"
+
 #######################################
 #####           radv             #####
 #######################################
@@ -2278,6 +2284,12 @@ route/test_default_route.py:
     reason: "Does not apply to standalone topos."
     conditions:
       - "'standalone' in topo_name"
+
+route/test_duplicate_route.py:
+  skip:
+    reason: "Temporarily skip this test until swss submodule update on 202505"
+    conditions:
+      - "release in ['202505']"
 
 route/test_route_flap.py:
   skip:
