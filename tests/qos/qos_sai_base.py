@@ -392,6 +392,7 @@ class QosSaiBase(QosBase):
         # Update profile static threshold value if  profile threshold is dynamic
         if "dynamic_th" in list(bufferProfile.keys()):
             platform_support_nvidia_new_algorithm_cal_buffer_thr = ["x86_64-nvidia_sn5600-r0",
+                                                                    "x86_64-nvidia_sn5640-r0",
                                                                     "x86_64-nvidia_sn5400-r0"]
             if dut_asic.sonichost.facts['platform'] in platform_support_nvidia_new_algorithm_cal_buffer_thr:
                 self.__compute_buffer_threshold_for_nvidia_device(dut_asic, table, port, bufferProfile)
@@ -2837,8 +2838,12 @@ def set_port_cir(interface, rate):
         match = re.search(pattern, result["stdout"])
         return match
 
-    @contextmanager
-    def disable_voq_watchdog(self, duthosts, get_src_dst_asic_and_duts, dutConfig):
+    def modify_voq_watchdog(self, duthosts, get_src_dst_asic_and_duts, dutConfig, enable):
+        # Skip if voq watchdog is not enabled.
+        if not self.voq_watchdog_enabled(get_src_dst_asic_and_duts):
+            logger.info("voq_watchdog is not enabled, skipping modify voq watchdog")
+            return
+
         dst_dut = get_src_dst_asic_and_duts['dst_dut']
         dst_asic = get_src_dst_asic_and_duts['dst_asic']
         dut_list = [dst_dut]
@@ -2855,35 +2860,24 @@ def set_port_cir(interface, rate):
                     dut_list.append(rp_dut)
                     asic_index_list.append(asic.asic_index)
 
-        # Skip if voq watchdog is not enabled.
-        if not self.voq_watchdog_enabled(get_src_dst_asic_and_duts):
-            logger.info("voq_watchdog is not enabled, skipping disable voq watchdog")
-            yield
-            return
+        # Modify voq watchdog.
+        for (dut, asic_index) in zip(dut_list, asic_index_list):
+            copy_set_voq_watchdog_script_cisco_8000(
+                dut=dut,
+                asic=asic_index,
+                enable=enable)
+            cmd_opt = "-n asic{}".format(asic_index)
+            if not dst_dut.sonichost.is_multi_asic:
+                cmd_opt = ""
+            dut.shell("sudo show platform npu script {} -s set_voq_watchdog.py".format(cmd_opt))
 
+    @contextmanager
+    def disable_voq_watchdog(self, duthosts, get_src_dst_asic_and_duts, dutConfig):
         # Disable voq watchdog.
-        for (dut, asic_index) in zip(dut_list, asic_index_list):
-            copy_set_voq_watchdog_script_cisco_8000(
-                dut=dut,
-                asic=asic_index,
-                enable=False)
-            cmd_opt = "-n asic{}".format(asic_index)
-            if not dst_dut.sonichost.is_multi_asic:
-                cmd_opt = ""
-            dut.shell("sudo show platform npu script {} -s set_voq_watchdog.py".format(cmd_opt))
-
+        self.modify_voq_watchdog(duthosts, get_src_dst_asic_and_duts, dutConfig, enable=False)
         yield
-
         # Enable voq watchdog.
-        for (dut, asic_index) in zip(dut_list, asic_index_list):
-            copy_set_voq_watchdog_script_cisco_8000(
-                dut=dut,
-                asic=asic_index,
-                enable=True)
-            cmd_opt = "-n asic{}".format(asic_index)
-            if not dst_dut.sonichost.is_multi_asic:
-                cmd_opt = ""
-            dut.shell("sudo show platform npu script {} -s set_voq_watchdog.py".format(cmd_opt))
+        self.modify_voq_watchdog(duthosts, get_src_dst_asic_and_duts, dutConfig, enable=True)
 
     @pytest.fixture(scope='function')
     def disable_voq_watchdog_function_scope(self, duthosts, get_src_dst_asic_and_duts, dutConfig):
