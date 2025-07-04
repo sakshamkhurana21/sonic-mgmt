@@ -14,14 +14,22 @@ all:
       hosts:
         msr-ixia-api-serv-1:
           ansible_host: 10.64.246.150
+          version: ixnetworkweb_9.30
         ixia-apiserver3:
           ansible_host: 10.64.246.190
+          version: ixnetworkweb_10.25.2405.106
+        ixia-apiserver4:
+          ansible_host: 10.64.246.25
+          version: ixnetworkweb_10.80.2412.123
         str-aresone-api-serv-01:
           ansible_host: 10.64.246.191
+          version: ixnetworkweb_10.25.2405.106
         str-aresone-api-serv-02:
           ansible_host: 10.64.246.192
+          version: ixnetworkweb_10.25.2405.106
         str-aresone-api-serv-03:
           ansible_host: 10.64.246.193
+          version: ixnetworkweb_10.25.2405.106
       vars:
         ansible_ssh_user: admin
         ansible_ssh_pass: admin
@@ -375,7 +383,7 @@ sonic_str3_cisco_8800:
       ansible_host: 10.3.146.97
   vars:
     hwsku: Cisco-88-LC0-36FH-O36
-    iface_speed: 100000    
+    iface_speed: 100000
 
 sonic_nvidia_sn5600_stress:
   hosts:
@@ -420,6 +428,7 @@ sonic_nvidia_sn5640_stress:
       hwsku: Mellanox-SN5640-C512S2
   vars:
     iface_speed: 100000
+    mgmt_subnet_mask_length: 23
 
 sonic_arista_7060x6_512_stress:
   hosts:
@@ -428,6 +437,7 @@ sonic_arista_7060x6_512_stress:
   vars:
     hwsku: Arista-7060X6-64PE-B-C512S2
     iface_speed: 100000
+    mgmt_subnet_mask_length: 23
 
 sonic_str2_arista_7808:
   hosts:
@@ -496,3 +506,5 @@ l1_switch:
       ansible_host: 10.64.246.185
     str-ocs-dlx64-acs-11:
       ansible_host: 10.64.246.186
+  vars:
+    mgmt_subnet_mask_length: 23
