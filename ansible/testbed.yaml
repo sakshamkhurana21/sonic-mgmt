@@ -437,9 +437,9 @@
   auto_recover: 'True'
   comment: yawenni
 
-- conf-name: vms64-t1-4700-1
+- conf-name: vms64-t0-4700-1
   group-name: vms64-1
-  topo: t1-56-lag
+  topo: t0-56-o8v48
   ptf_image_name: docker-ptf
   ptf: vms64-1
   ptf_ip: 10.64.247.64/23
@@ -1129,7 +1129,7 @@
   ptf_ip: 10.206.144.34/24
   ptf_ipv6: 2a01:111:e205:100::ace:908b/64
   server: server_svc_1
-  vm_base: VM10102
+  vm_base: VM10158
   dut:
   - svcstr-7250x3b-2
   inv_name: strsvc
@@ -1153,13 +1153,13 @@
 
 - conf-name: vmsvc1-t2-7280dr3-1
   group-name: svc1-8
-  topo: t2_single_node_min
+  topo: t2_single_node_max
   ptf_image_name: docker-ptf
   ptf: svc1-8
   ptf_ip: 10.206.144.36/24
   ptf_ipv6: 2a01:111:e205:100::ace:9100/64
   server: server_svc_1
-  vm_base: VM10158
+  vm_base: VM10102
   dut:
   - svcstr-7280dr3-1
   inv_name: strsvc
@@ -4341,15 +4341,15 @@
   auto_recover: 'True'
   comment: MattSoulsby
 
-- conf-name: vms13-ft2-7060x6-4
-  group-name: vms13-2
+- conf-name: vms73-ft2-7060x6-4
+  group-name: vms73-8
   topo: ft2-64
   ptf_image_name: docker-ptf
-  ptf: vms13-2
+  ptf: vms73-8
   ptf_ip: 10.64.247.128/23
   ptf_ipv6: 2a01:111:e210:b000::a40:f77b/64
-  server: server_13
-  vm_base: VM13500
+  server: server_73
+  vm_base: VM73300
   dut:
   - str4-7060x6-512-4
   inv_name: str4
