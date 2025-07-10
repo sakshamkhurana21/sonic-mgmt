@@ -596,6 +596,12 @@ drop_packets:
 #######################################
 #####           dualtor           #####
 #######################################
+dualtor/test_bgp_block_loopback1.py:
+  skip:
+    reason: "KVM do not support dualtor tunnel functionality, lower tor bgp verify would fail."
+    conditions:
+      - "asic_type in ['vs']"
+
 dualtor/test_ipinip.py::test_encap_with_mirror_session:
   xfail:
      reason: "Testcase ignored on dualtor-aa topology and mellanox setups due to Github issue: https://github.com/sonic-net/sonic-mgmt/issues/8577"
@@ -1187,6 +1193,30 @@ everflow/test_everflow_testbed.py::TestEverflowV4EgressAclEgressMirror::test_eve
     conditions:
       - "https://github.com/sonic-net/sonic-mgmt/issues/17034 and 't2' not in topo_name"
 
+everflow/test_everflow_testbed.py::TestEverflowV4EgressAclEgressMirror::test_everflow_fwd_recircle_port_queue_check:
+    skip:
+      reason: "Test not supported on non broadcom-dnx and non voq platforms"
+      conditions_logical_operator: "OR"
+      conditions:
+        - "(asic_subtype not in ['broadcom-dnx'])"
+        - "('voq' not in switch_type)"
+
+everflow/test_everflow_testbed.py::TestEverflowV4EgressAclIngressMirror::test_everflow_fwd_recircle_port_queue_check:
+  skip:
+    reason: "Test not supported on non broadcom-dnx and non voq platforms"
+    conditions_logical_operator: "OR"
+    conditions:
+      - "(asic_subtype not in ['broadcom-dnx'])"
+      - "('voq' not in switch_type)"
+
+everflow/test_everflow_testbed.py::TestEverflowV4IngressAclEgressMirror::test_everflow_fwd_recircle_port_queue_check:
+  skip:
+    reason: "Test not supported on non broadcom-dnx and non voq platforms"
+    conditions_logical_operator: "OR"
+    conditions:
+      - "(asic_subtype not in ['broadcom-dnx'])"
+      - "('voq' not in switch_type)"
+
 everflow/test_everflow_testbed.py::TestEverflowV4IngressAclIngressMirror::test_everflow_basic_forwarding[erspan_ipv6-cli-downstream-default]:
   skip:
     reason: "SAI_STATUS_NOT_SUPPORTED for everflow over IPv6 on Arista-7260CX3"
@@ -1216,6 +1246,14 @@ everflow/test_everflow_testbed.py::TestEverflowV4IngressAclIngressMirror::test_e
     reason: "Test is not ready for dualtor and not stable on Non-T2 platform."
     conditions:
       - "https://github.com/sonic-net/sonic-mgmt/issues/17034 and 't2' not in topo_name"
+
+everflow/test_everflow_testbed.py::TestEverflowV4IngressAclIngressMirror::test_everflow_fwd_recircle_port_queue_check:
+  skip:
+    reason: "Test not supported on non broadcom-dnx and non voq platforms"
+    conditions_logical_operator: "OR"
+    conditions:
+      - "(asic_subtype not in ['broadcom-dnx'])"
+      - "('voq' not in switch_type)"
 
 everflow/test_everflow_testbed.py::TestEverflowV4IngressAclIngressMirror::test_everflow_neighbor_mac_change[erspan_ipv6-cli-downstream-default]:
   skip:
@@ -1453,6 +1491,8 @@ generic_config_updater/test_pfcwd_status.py:
     conditions:
       - "topo_type in ['m0', 'mx', 'm1']"
       - "release in ['202211']"
+      - "hwsku in ['Mellanox-SN5600-C224O8', 'Mellanox-SN5600-C256S1', 'Mellanox-SN5640-C448O16', 'Mellanox-SN5600-C224O8',
+                   'Arista-7060X6-64PE-C256S2', 'Arista-7060X6-64PE-C224O8', 'Arista-7060X6-64PE-B-C512S2', 'Arista-7060X6-64PE-B-C448O16']"
 
 generic_config_updater/test_pg_headroom_update.py:
   skip:
@@ -2290,9 +2330,15 @@ qos/test_qos_dscp_mapping.py::TestQoSSaiDSCPQueueMapping_IPIP_Base::test_dscp_to
     reason: "Pipe decap mode not supported due to either SAI or platform limitation / M* topo does not support qos"
     conditions_logical_operator: or
     conditions:
-      - "asic_type in ['mellanox', 'broadcom', 'cisco-8000']"
+      - "asic_type in ['broadcom', 'cisco-8000']"
       - https://github.com/sonic-net/sonic-mgmt/issues/12906
       - "topo_type in ['m0', 'mx', 'm1']"
+
+qos/test_qos_dscp_mapping.py::TestQoSSaiDSCPQueueMapping_IPIP_Base::test_dscp_to_queue_mapping_uniform_mode:
+  skip:
+    reason: "Uniform decap mode is not supported on Mellanox dualtor testbed due to the mode is pipe to support dscp remapping"
+    conditions:
+      - "'dualtor' in topo_name and asic_type in ['mellanox']"
 
 qos/test_qos_masic.py:
   skip:
