@@ -1109,7 +1109,7 @@ everflow/test_everflow_per_interface.py::test_everflow_packet_format[ipv6-erspan
     reason: "Skip everflow packet integrity IPv6 test on unsupported platforms"
     conditions_logical_operator: or
     conditions:
-      - "asic_type in ['cisco-8000', 'marvell', 'mellanox'] or (asic_subtype in ['broadcom-dnx'] and https://github.com/sonic-net/sonic-swss/issues/2204)"
+      - "asic_type in ['cisco-8000', 'marvell', 'mellanox', 'marvell-prestera'] or (asic_subtype in ['broadcom-dnx'] and https://github.com/sonic-net/sonic-swss/issues/2204)"
       - "'dualtor' in topo_name"
       - "platform in ['x86_64-8800_lc_48h_o-r0', 'x86_64-8800_lc_48h-r0']"
       - "(is_multi_asic==True) and https://github.com/sonic-net/sonic-buildimage/issues/11776"
@@ -1119,7 +1119,7 @@ everflow/test_everflow_per_interface.py::test_everflow_packet_format[ipv6-m0_l3_
     reason: "Skip m0 everflow packet integrity IPv6 test on unsupported platforms"
     conditions_logical_operator: or
     conditions:
-      - "asic_type in ['marvell']"
+      - "asic_type in ['marvell', 'marvell-prestera']"
       - "'dualtor' in topo_name"
       - "platform in ['x86_64-8800_lc_48h_o-r0', 'x86_64-8800_lc_48h-r0']"
       - "(is_multi_asic==True) and https://github.com/sonic-net/sonic-buildimage/issues/11776"
@@ -1129,7 +1129,7 @@ everflow/test_everflow_per_interface.py::test_everflow_packet_format[ipv6-m0_vla
     reason: "Skip m0 everflow packet integrity IPv6 test on unsupported platforms"
     conditions_logical_operator: or
     conditions:
-      - "asic_type in ['marvell']"
+      - "asic_type in ['marvell', 'marvell-prestera']"
       - "'dualtor' in topo_name"
       - "platform in ['x86_64-8800_lc_48h_o-r0', 'x86_64-8800_lc_48h-r0']"
       - "(is_multi_asic==True) and https://github.com/sonic-net/sonic-buildimage/issues/11776"
@@ -1429,6 +1429,8 @@ generic_config_updater/test_eth_interface.py::test_toggle_pfc_asym:
     conditions_logical_operator: "OR"
     conditions:
       - "asic_type in ['cisco-8000']"
+      - "hwsku in ['Mellanox-SN5600-C256S1', 'Mellanox-SN5600-C224O8', 'Mellanox-SN5640-C512S2',
+                           'Mellanox-SN5640-C448O16']"
 
 generic_config_updater/test_eth_interface.py::test_update_speed:
   skip:
@@ -1847,6 +1849,13 @@ iface_namingmode/test_iface_namingmode.py::TestShowQueue::test_show_queue_waterm
     strict: True
     conditions:
       - "platform in ['x86_64-cel_e1031-r0']"
+
+iface_namingmode/test_iface_namingmode.py::test_show_pfc_counters:
+  skip:
+    reason: "Not supported on SKU"
+    conditions:
+      - "hwsku in ['Mellanox-SN5600-C256S1', 'Mellanox-SN5600-C224O8', 'Mellanox-SN5640-C512S2',
+                   'Mellanox-SN5640-C448O16']"
 
 #######################################
 #####            ip               #####
@@ -2322,6 +2331,13 @@ qos/test_oq_watchdog.py:
     reason: "OQ watchdog tests only apply to cisco 8000 platforms."
     conditions:
       - "asic_type not in ['cisco-8000']"
+
+qos/test_pfc_counters.py:
+  skip:
+    reason: "Not supported on SKU"
+    conditions:
+      - "hwsku in ['Mellanox-SN5600-C256S1', 'Mellanox-SN5600-C224O8', 'Mellanox-SN5640-C512S2',
+                   'Mellanox-SN5640-C448O16']"
 
 qos/test_pfc_pause.py::test_pfc_pause_lossless:
   # For this test, we use the fanout connected to the DUT to send PFC pause frames.
@@ -3225,6 +3241,10 @@ vxlan/test_vnet_bgp_route_precedence.py:
     conditions:
       - "asic_type not in ['cisco-8000', 'mellanox']"
       - "release in ['202411']"
+  xfail:
+    reason: "Skip due to the test issue: https://github.com/sonic-net/sonic-mgmt/issues/18594"
+    conditions:
+      - "https://github.com/sonic-net/sonic-mgmt/issues/18594"
 
 vxlan/test_vnet_route_leak.py:
   skip:
