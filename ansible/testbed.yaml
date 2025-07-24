@@ -707,8 +707,8 @@
   server: server_24
   vm_base: VM24088
   dut:
-  - str2-7050cx3-acs-08
-  - str2-7050cx3-acs-09
+  - str2-7050cx3-32c-f-acs-08
+  - str2-7050cx3-32c-f-acs-09
   inv_name: str2
   auto_recover: 'True'
   comment: hellogemini
@@ -2260,6 +2260,36 @@
   dut:
   - str3-7060x6-64pe-6
   inv_name: str3
+  auto_recover: 'True'
+  comment: patelmi
+
+- conf-name: ptp-7060x6-moby-1
+  group-name: ''
+  topo: ptp-130
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str5-7060x6-moby-512-4
+  inv_name: str5
+  auto_recover: 'True'
+  comment: patelmi
+
+- conf-name: ptp-7060x6-moby-2
+  group-name: ''
+  topo: ptp-130
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str5-7060x6-moby-512-5
+  inv_name: str5
   auto_recover: 'True'
   comment: patelmi
 
@@ -4040,9 +4070,9 @@
   auto_recover: 'True'
   comment: jianquanye
 
-- conf-name: tk5-7050-t0-01
-  group-name: 7050-01
-  topo: t0
+- conf-name: tbtk5-dual-t0-7050-1
+  group-name: tk5-7-4
+  topo: dualtor
   ptf_image_name: docker-ptf
   ptf: ptf7-4
   ptf_ip: 10.212.65.94/24
@@ -4051,24 +4081,10 @@
   vm_base: VM77096
   dut:
   - strtk5-7050cx3-01
-  inv_name: strtk5
-  auto_recover: 'True'
-  comment: tk5-7050-t0-01
-
-- conf-name: tk5-7050-t1-01
-  group-name: 7050-02
-  topo: t1-lag
-  ptf_image_name: docker-ptf
-  ptf: ptf7-5
-  ptf_ip: 10.212.65.95/24
-  ptf_ipv6: 2603:10e2:140:3000::11f/122
-  server: server_tk5_7
-  vm_base: VM77100
-  dut:
   - strtk5-7050cx3-02
   inv_name: strtk5
   auto_recover: 'True'
-  comment: tk5-7050-t1-01
+  comment: tbtk5-dual-t0-7050-1
 
 - conf-name: vms24-t1-8101-02
   group-name: vms24-1
@@ -4329,7 +4345,7 @@
 
 - conf-name: testbed-bjw2-can-dual-t0-8101c1-2
   group-name: bjw2-4-1
-  topo: dualtor-aa-64-breakout
+  topo: dualtor-aa
   ptf_image_name: docker-ptf
   ptf: bjw2-4-1
   ptf_ip: 10.150.23.133/23
