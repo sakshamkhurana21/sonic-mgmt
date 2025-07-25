@@ -388,3 +388,5 @@ r, ".* ERR syncd#syncd: :- process_on_fdb_event: FDB notification was not sent s
 
 # Ignore Cisco fault handler error
 r, ".* ERR faulthandler:.*Unable to read redis reply.*"
+# https://github.com/sonic-net/sonic-mgmt/issues/19790
+r, ".* ERR syncd#syncd: [none] SAI_API_SWITCH:sai_query_stats_capability:874 stats capability not supported for object.*"

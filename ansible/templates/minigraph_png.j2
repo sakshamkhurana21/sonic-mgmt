@@ -207,6 +207,10 @@
 {% else %}
 {% set dev_type = 'LeafRouter' %}
 {% endif %}
+{% elif 'LT2' in dev %}
+{% set dev_type = 'LowerSpineRouter' %}
+{% elif 'FT2' in dev %}
+{% set dev_type = 'FabricSpineRouter' %}
 {% elif 'UT2' in dev %}
 {% set dev_type = 'UpperSpineRouter' %}
 {% elif 'T2' in dev %}
