@@ -281,8 +281,8 @@
   server: server_21
   vm_base: VM21028
   dut:
-  - str2-7050cx3-acs-10
-  - str2-7050cx3-acs-11
+  - str2-7050cx3-32c-f-acs-10
+  - str2-7050cx3-32c-f-acs-11
   inv_name: str2
   auto_recover: 'True'
   comment: v-saidia
@@ -4053,7 +4053,7 @@
   ptf_extra_mgmt_ip:
     - 172.16.188.133/17
 
-- conf-name: testbed-bjw2-can-t0-8101c1c1-5
+- conf-name: testbed-bjw2-can-t0-8101c1-5
   group-name: bjw2-2-c
   topo: t0-64
   ptf_image_name: docker-ptf
@@ -4173,8 +4173,8 @@
   topo: ft2-64
   ptf_image_name: docker-ptf
   ptf: vms73-8
-  ptf_ip: 10.64.247.128/23
-  ptf_ipv6: 2a01:111:e210:b000::a40:f77b/64
+  ptf_ip: 10.64.247.129/23
+  ptf_ipv6: 2a01:111:e210:b000::a40:f781/64
   server: server_73
   vm_base: VM73300
   dut:
@@ -4574,3 +4574,33 @@
   comment: Beijing Lab
   ptf_extra_mgmt_ip:
     - 172.16.188.83/17
+
+- conf-name: ptp-7060x6-64-1
+  group-name:
+  topo: ptp-64
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str-dcs-7060x6-64pe-b-ehw-f-c09-u27
+  inv_name: str
+  auto_recover: 'True'
+  comment: arizzubair
+
+- conf-name: ptp-7060x6-64-2
+  group-name:
+  topo: ptp-64
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str-dcs-7060x6-64pe-b-ehw-f-c09-u29
+  inv_name: str
+  auto_recover: 'True'
+  comment: arizzubair
