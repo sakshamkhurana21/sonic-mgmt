@@ -90,13 +90,13 @@ parameters:
 
 - name: TO_IMAGE_LIST
   type: string
-  default: http://10.201.148.43/azmirrors/pipelines/Networking-acs-buildimage-Official/rgarthwaite/20250505.08-with-3783/broadcom/131443165/target/sonic-aboot-broadcom.swi
+  default: latest
   displayName: "All target image numbers (space separated)"
 
 - name: TO_IMAGE_URL
   displayName: "Target image location"
   type: string
-  default: custom
+  default: $(IMAGE_BRCM_ABOOT_202505)
   values:
   - $(IMAGE_BRCM_ABOOT_201811)
   - $(IMAGE_BRCM_ABOOT_201911)

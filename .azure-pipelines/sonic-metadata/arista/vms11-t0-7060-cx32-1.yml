@@ -66,7 +66,7 @@ parameters:
 - name: FROM_IMAGE_URL
   displayName: "Base image location"
   type: string
-  default: $(IMAGE_BRCM_ABOOT_202405_SLIM)
+  default: $(IMAGE_BRCM_ABOOT_202411_SLIM)
   values:
   - $(IMAGE_BRCM_ABOOT_201811)
   - $(IMAGE_BRCM_ABOOT_201911)
@@ -83,19 +83,21 @@ parameters:
   - $(IMAGE_BRCM_ABOOT_202405_SLIM)
   - $(IMAGE_BRCM_ABOOT_202411)
   - $(IMAGE_BRCM_ABOOT_202411_SLIM)
+  - $(IMAGE_BRCM_ABOOT_202505)
+  - $(IMAGE_BRCM_ABOOT_202505_SLIM)
   - $(IMAGE_BRCM_ABOOT_INTERNAL)
   - $(IMAGE_BRCM_ABOOT_PUBLIC)
   - custom
 
 - name: TO_IMAGE_LIST
   type: string
-  default: http://10.201.148.43/azmirrors/pipelines/Networking-acs-buildimage-Official/rgarthwaite/20250505.08-with-3783/broadcom/131443165/target/sonic-aboot-broadcom.swi
+  default: latest
   displayName: "All target image numbers (space separated)"
 
 - name: TO_IMAGE_URL
   displayName: "Target image location"
   type: string
-  default: custom
+  default: $(IMAGE_BRCM_ABOOT_202505)
   values:
   - $(IMAGE_BRCM_ABOOT_201811)
   - $(IMAGE_BRCM_ABOOT_201911)
@@ -112,6 +114,8 @@ parameters:
   - $(IMAGE_BRCM_ABOOT_202405_SLIM)
   - $(IMAGE_BRCM_ABOOT_202411)
   - $(IMAGE_BRCM_ABOOT_202411_SLIM)
+  - $(IMAGE_BRCM_ABOOT_202505)
+  - $(IMAGE_BRCM_ABOOT_202505_SLIM)
   - $(IMAGE_BRCM_ABOOT_INTERNAL)
   - $(IMAGE_BRCM_ABOOT_PUBLIC)
   - custom
