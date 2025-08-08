@@ -402,3 +402,6 @@ r, ".* ERR syncd#syncd: .* SAI_API_SWITCH:sai_query_stats_capability:\d+ stats c
 r, ".* ERR pmon.*Failed to freeze VDM.*"
 r, ".* ERR pmon.*Failed to confirm VDM.*"
 r, ".* ERR pmon.*Failed to unfreeze VDM.*"
+
+# Ignore lldp error log, don't have real impact
+r, ".* ERR container: docker cmd: stop for lldp failed with 500 Server Error.*"
