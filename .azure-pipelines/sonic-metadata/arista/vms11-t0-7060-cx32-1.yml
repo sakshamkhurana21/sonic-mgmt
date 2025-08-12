@@ -16,7 +16,7 @@ schedules:
     displayName: Nightly Scheduler
     branches:
       include:
-        - internal-202411
+        - internal-202505
     always: true
 
 variables:
