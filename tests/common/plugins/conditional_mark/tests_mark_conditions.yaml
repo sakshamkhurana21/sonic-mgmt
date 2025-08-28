@@ -1926,7 +1926,7 @@ iface_namingmode/test_iface_namingmode.py::TestConfigInterface::test_config_inte
     conditions:
       - "asic_type in ['cisco-8000']"
 
-iface_namingmode/test_iface_namingmode.py::TestShowInterfaces::test_config_interface_state:
+iface_namingmode/test_iface_namingmode.py::TestConfigInterface::test_config_interface_state:
   xfail:
     reason: "Cisco-8101-O8V48 testbed is not supported."
     conditions:
