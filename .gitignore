@@ -28,3 +28,5 @@ ansible/group_vars/all/secrets.json
 gcm-diagnose.log
 
 sonic-dump/
+
+test_reporting/jupyter-notebooks/jupyter-venv/
