@@ -49,13 +49,13 @@ parameters:
 
 - name: FROM_IMAGE_LIST
   type: string
-  default: 22
+  default: 30
   displayName: "All base image numbers (space separated)"
 
 - name: FROM_IMAGE_URL
   displayName: "Base image location"
   type: string
-  default: $(IMAGE_MLNX_202411)
+  default: $(IMAGE_MLNX_202311)
   values:
   - $(IMAGE_MLNX_201811)
   - $(IMAGE_MLNX_201911)
