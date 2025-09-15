@@ -2488,6 +2488,13 @@ pfcwd/test_pfcwd_warm_reboot.py::TestPfcwdWb::test_pfcwd_wb[async_storm:
 #######################################
 #####     platform_tests          #####
 #######################################
+platform_tests/test_advanced_reboot.py::test_fast_reboot:
+  xfail:
+    reason: "xfail testcase due to known issue https://msazure.visualstudio.com/One/_workitems/edit/34628299 "
+    conditions:
+    - "hwsku in ['Arista-7260CX3-D108C8', 'Arista-7260CX3-D108C10']"
+    - "topo_name in ['t0-116', 't0-118']"
+
 platform_tests/test_reload_config.py::test_reload_configuration:
   skip:
     reason: "Skip test_reload_configuration on Cisco platform due to unstable results"
