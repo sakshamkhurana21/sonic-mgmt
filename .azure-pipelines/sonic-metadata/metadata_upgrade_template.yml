@@ -95,7 +95,7 @@ parameters:
   default: false
 - name: ENABLE_CPA
   type: boolean
-  default: true
+  default: false
   displayName: "ENABLE_CPA"
 
 stages:
