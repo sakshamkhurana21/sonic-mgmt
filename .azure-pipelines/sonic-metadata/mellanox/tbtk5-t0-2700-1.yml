@@ -15,7 +15,7 @@ schedules:
     displayName: Nightly Scheduler
     branches:
       include:
-        - internal-202505
+        - v-cshekar/add-ipv6-dataplane-traffic
     always: true
 
 variables:
