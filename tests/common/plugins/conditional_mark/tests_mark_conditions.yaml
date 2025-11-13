@@ -2307,6 +2307,12 @@ memory_checker/test_memory_checker.py:
 #######################################
 #####      metadata-scripts       #####
 #######################################
+metadata-scripts/test_metadata_upgrade_path.py:
+  skip:
+    reason: "Cannot install base image version 202411 as platform doesn't support this version."
+    conditions:
+      - "platform in ['x86_64-arista_7050cx3_32c']"
+
 metadata-scripts/test_metadata_upgrade_path.py::test_upgrade_path_t2:
   skip:
     reason: "Only supported on T2 topology"
