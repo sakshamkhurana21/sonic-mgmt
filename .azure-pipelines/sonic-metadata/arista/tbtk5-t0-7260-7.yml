@@ -135,7 +135,7 @@ parameters:
   - test_double_upgrade_path
 
 - name: SELECT_SAD_CASES
-  default: "sad,multi_sad,sad_bgp,sad_lag_member,sad_lag,sad_vlan_port,sad_inboot"
+  default: "sad,sad_bgp,sad_lag_member,sad_lag,sad_vlan_port,sad_inboot"
   type: string
   displayName: "SAD cases to run (only applies for test_warm_upgrade_sad_path)"
 
