@@ -19,33 +19,27 @@ BASE_UPGRADE_PATH = {
         ("IMAGE_BRCM_ABOOT_202305_SLIM", 22),
         ("IMAGE_BRCM_ABOOT_202311_SLIM", 30),
         ("IMAGE_BRCM_ABOOT_202405_SLIM", 25),
-        ("IMAGE_BRCM_ABOOT_202411_SLIM", 22),
-        ("IMAGE_BRCM_ABOOT_202505", "latest")
+        ("IMAGE_BRCM_ABOOT_202411_SLIM", 22)
     ],
     "SONiC-Arista-7260CX364-ToRRouter": [
         ("IMAGE_BRCM_ABOOT_202012", 97),
         ("IMAGE_BRCM_ABOOT_202305", 22),
         ("IMAGE_BRCM_ABOOT_202311", 30),
         ("IMAGE_BRCM_ABOOT_202405", 25),
-        ("IMAGE_BRCM_ABOOT_202411", 22),
-        ("IMAGE_BRCM_ABOOT_202505", "latest")
+        ("IMAGE_BRCM_ABOOT_202411", 22)
     ],
     "SONiC-Mellanox-2700-ToRRouter": [
         ("IMAGE_MLNX_201911", 88),
         ("IMAGE_MLNX_202205", 40),
         ("IMAGE_MLNX_202305", 31),
-        ("IMAGE_MLNX_202311", 30),
-        ("IMAGE_MLNX_202405", 25),
-        ("IMAGE_MLNX_202411", 22),
-        ("IMAGE_MLNX_202505", "latest")
+        ("IMAGE_MLNX_202311", 30)
     ],
     "SONiC-Arista-7050CX3-ToRRouter": [
         ("IMAGE_BRCM_ABOOT_202012", 97),
         ("IMAGE_BRCM_ABOOT_202305", 22),
         ("IMAGE_BRCM_ABOOT_202311", 30),
         ("IMAGE_BRCM_ABOOT_202405", 25),
-        ("IMAGE_BRCM_ABOOT_202411", 22),
-        ("IMAGE_BRCM_ABOOT_202505", "latest")
+        ("IMAGE_BRCM_ABOOT_202411", 22)
     ]
 }
 
