@@ -67,6 +67,12 @@ all:
         bjw3-8-3:
           ansible_host: 10.150.239.18
           ansible_hostv6: 2404:f801:10:16::a96:ef11
+        bjw3-9-1:
+          ansible_host: 10.150.239.19
+          ansible_hostv6: 2404:f801:10:16::a96:ef12
+        bjw3-5-3:
+          ansible_host: 10.150.239.20
+          ansible_hostv6: 2404:f801:10:16::a96:ef13
     pdu:
       vars:
         pdu_ro_snmp_version: v3
@@ -241,6 +247,9 @@ server:
     bjw3-can-serv-8:
       ansible_host: 10.150.238.23
       ansible_hostv6: 2404:f801:10:16::a96:ee17
+    bjw3-can-serv-9:
+      ansible_host: 10.150.238.24
+      ansible_hostv6: 2404:f801:10:16::a96:ee18
 
 
 sonic_arista_7050C_S128:
