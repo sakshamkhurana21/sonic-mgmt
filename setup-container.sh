@@ -5,7 +5,7 @@ declare -r SCRIPT_PATH="$(readlink -f "${0}")"
 declare -r SCRIPT_DIR="$(dirname "${SCRIPT_PATH}")"
 
 declare -r DOCKER_REGISTRY="sonicdev-microsoft.azurecr.io:443"
-declare -r DOCKER_SONIC_MGMT="docker-sonic-mgmt:latest"
+declare -r DOCKER_SONIC_MGMT="docker-sonic-mgmt:py3only"
 declare -r LOCAL_IMAGE_NAME="docker-sonic-mgmt-$(echo "${USER}" | tr '[:upper:]' '[:lower:]')"
 declare -r LOCAL_IMAGE_TAG="master"
 declare -r LOCAL_IMAGE="${LOCAL_IMAGE_NAME}:${LOCAL_IMAGE_TAG}"
@@ -329,6 +329,8 @@ RUN if [ -d /var/AzDevOps/env-python3 ] \
 /bin/bash -c '${HOME}/env-python3/bin/pip install wheel'; \
 /bin/bash -c '${HOME}/env-python3/bin/pip install $(/var/AzDevOps/env-python3/bin/pip freeze | grep -vE "distro|PyGObject|python-apt|unattended-upgrades|dbus-python")'; \
 fi
+
+RUN sudo rm -rf /usr/local/lib/python3.8/dist-packages/tests
 
 # Remote debug port setup
 {% if SONIC_MGMT_DEBUG_PORT %}
