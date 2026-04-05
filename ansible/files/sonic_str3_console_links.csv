@@ -1,5 +1,6 @@
 StartDevice,StartPort,EndDevice,Console_type,Console_menu_type,Proxy
 str43-0101-0400-07c0,48,str3-8111-04,ssh,cisco_config,
+console-184,8,str3-8111-03,ssh,cisco_config,
 console-184,33,str3-8101-fanout-05,ssh,cisco_config,
 console-184,34,str3-8101-fanout-06,ssh,cisco_config,
 str43-0101-0400-07c0,36,str3-8101-fanout-10,ssh,cisco_config,
@@ -92,3 +93,6 @@ str43-0101-0501-02c0,3,str3-nvidia-4280-E04-U22,ssh,cisco_config,
 str43-0101-0501-02c0,4,str3-cisco-8102-E04-U26,ssh,cisco_config,
 str43-0101-0400-06c0,47,str3-7280r4-ut2-1,ssh,cisco_config,
 str43-0101-0400-06c0,48,str3-7280r4-ut2-2,ssh,cisco_config,
+str43-0101-0801-01c0,18,str5-Nokia-7220-Th6p-1,ssh,cisco_config,
+str43-0101-0801-01c0,19,str5-Nokia-7220-Th6p-2,ssh,cisco_config,
+str43-0101-0801-01c0,20,str43-0101-0200-01lt2,ssh,cisco_config,

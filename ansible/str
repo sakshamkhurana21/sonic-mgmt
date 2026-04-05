@@ -230,6 +230,9 @@ all:
         pdu-122:
           ansible_host: 10.3.154.123
           protocol: snmp
+        pdu-159:
+          ansible_host: 10.3.153.159
+          protocol: snmp
         pdu-242:
           ansible_host: 10.3.154.131
           protocol: snmp
@@ -245,11 +248,13 @@ sonic:
     sonic_arista32_100:
     sonic_agc7648:
     sonic_mlnx_4700:
+    sonic_arista_7050cx3:
     sonic_arista_7060c6:
     sonic_arista_7280dr3_400G:
     sonic_nokia_7250x3b_400G:
     sonic_arista_7060x6_512:
     sonic_cisco_8101:
+    sonic_nexthop_5010:
 
 sonic_cisco_8101:
   hosts:
@@ -271,6 +276,24 @@ sonic_cisco_8101:
         "0x28": "x86_64-8101_32fh_o-r0"
         "0x2D": "Cisco"
         "0xFE": "0x4F48A22C"
+    str-8101-temp01:
+      ansible_host: 10.3.156.27
+      ansible_hostv6: 2a01:111:e210:4000::a03:9c1b
+      mgmt_subnet_mask_length: 25
+      mgmt_subnet_v6_mask_length: 121
+      hwsku: Cisco-8101-O8C48
+      model: 8101-32FH-O
+      serial: FLM264100S4
+      base_mac: 98:A2:C0:26:EE:00
+      syseeprom_info:
+        "0x21": "8101-32FH-O"
+        "0x22": "477691"
+        "0x23": "FLM264100S4"
+        "0x24": "98:A2:C0:26:EE:00"
+        "0x26": "2"
+        "0x28": "x86_64-8101_32fh_o-r0"
+        "0x2D": "Cisco"
+        "0xFE": "0x4A406B0B"
   vars:
     iface_speed: 400000
 
@@ -336,6 +359,27 @@ sonic_mlnx_40:
         "0x2A": "128"
         "0x2B": "Mellanox"
         "0xFE": "0xA394E79E"
+    3pos-sn2700-e11-34:
+      hwsku: Mellanox-SN2700
+      ansible_host: 10.3.150.206
+      ansible_hostv6: 2a01:111:e210:87::a03:96ce
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      model: MSN2700-CS2ROS
+      serial: MT2306T005KE
+      base_mac: 9C:05:91:63:B6:C0
+      syseeprom_info:
+        "0x21": "MSN2700"
+        "0x22": "MSN2700-CS2R2OS"
+        "0x23": "MT2306T005KE"
+        "0x24": "9C:05:91:63:B6:C0"
+        "0x25": "02/13/2023 04:59:25"
+        "0x26": "18"
+        "0x28": "x86_64-mlnx_msn2700-r0"
+        "0x29": "2021.05-5.3.0008-9600"
+        "0x2A": "128"
+        "0x2B": "Mellanox"
+        "0xFE": "0xA717CE6B"
   vars:
     hwsku: Mellanox-SN2700
     iface_speed: 100000
@@ -488,6 +532,23 @@ sonic_agc7648:
   vars:
     hwsku: Delta-AGC7648
     iface_speed: 10000
+
+sonic_arista_7050cx3:
+  hosts:
+    str-7050cx3-c17-u39:
+      ansible_host: 10.3.146.211
+      ansible_hostv6: 2a01:111:e210:3000::a03:92d3
+      mgmt_subnet_mask_length: 24
+      hwsku: Arista-7050CX3-32S-C32
+      model: DCS-7050CX3-32S-SSD
+      serial: JPW20280878
+      base_mac: d4:af:f7:4c:eb:28
+      syseeprom_info:
+        "0x21": "DCS-7050CX3-32S-SSD"
+        "0x23": "JPW20280878"
+        "0x24": "d4:af:f7:4c:eb:28"
+        "0x2D": "Arista Networks"
+        "0x2B": "Arista Networks"
 
 sonic_arista_7060c6:
   hosts:
@@ -849,6 +910,27 @@ sonic_arista_7060x6_512:
         "0x2B": "Arista Networks"
         "0x2D": "Arista Networks"
         "0x2F": "HBG25160FL2"
+    str-7060x6-d08-u10:
+      ansible_host: 10.3.147.19
+      ansible_hostv6: 2a01:111:e210:8a::a03:9313
+      mgmt_subnet_mask_length: 24
+      mgmt_subnet_v6_mask_length: 120
+      hwsku: Arista-7060X6-64PE-B-C512S2
+      model: DCS-7060X6-64PE-B
+      serial: HBG252401DV
+      base_mac: a4:7a:72:2c:fb:ab
+      syseeprom_info:
+        "0x21": "DCS-7060X6-64PE-B"
+        "0x22": "ASY0899401A0"
+        "0x23": "HBG252401DV"
+        "0x24": "a4:7a:72:2c:fb:ab"
+        "0x25": "2025/06/17 21:57:55"
+        "0x26": "11.00"
+        "0x27": "02.00"
+        "0x28": "x86_64-arista_7060x6_64pe_b"
+        "0x2B": "Arista Networks"
+        "0x2D": "Arista Networks"
+        "0x2F": "HBG252401DV"
     str43-7060x6-64pe-b-ehw-f-c09-u39:
       ansible_host: 10.64.247.116
       ansible_hostv6: 2a01:111:e210:b000::a40:f774
@@ -892,6 +974,53 @@ sonic_arista_7060x6_512:
         "0x2D": "Arista Networks"
         "0x2F": "HBG25160FLK"
 
+sonic_nexthop_5010:
+  hosts:
+    str43-ut2-nh5010-01:
+      ansible_host: 10.64.247.69
+      ansible_hostv6: 2a01:111:e210:b000::a40:f745
+      mgmt_subnet_mask_length: 26
+      mgmt_subnet_v6_mask_length: 122
+      hwsku: NH-5010-F-O64
+      model: NH-5010-F
+      serial: NH-FSJ25350027
+      base_mac: e8:e4:9d:00:c6:da
+      syseeprom_info:
+        "0x21": "NH-5010-F"
+        "0x22": "950-00004-01"
+        "0x23": "NH-FSJ25350027"
+        "0x24": "e8:e4:9d:00:c6:da"
+        "0x26": "0"
+        "0x28": "x86_64-nexthop_5010-r0"
+        "0x2B": "Nexthop Systems Inc"
+        "0x2D": "Nexthop AI"
+        "0x2F": "www.nexthop.ai"
+        "0xFD_1": "00 00 f6 62 01 4e 48 2d 46 53 4a 32 35 33 34 30 30 39 35"
+        "0xFD_2": "00 00 f6 62 02 4e 48 32 35 2d 35 30"
+        "0xFE": "0x9F995A96"
+    str43-ut2-nh5010-02:
+      ansible_host: 10.64.247.72
+      ansible_hostv6: 2a01:111:e210:b000::a40:f748
+      mgmt_subnet_mask_length: 26
+      mgmt_subnet_v6_mask_length: 122
+      hwsku: NH-5010-F-O64
+      model: NH-5010-F
+      serial: NH-SMP25430039
+      base_mac: e8:e4:9d:10:14:28
+      syseeprom_info:
+        "0x21": "NH-5010-F"
+        "0x22": "950-00004-01"
+        "0x23": "NH-SMP25430039"
+        "0x24": "e8:e4:9d:10:14:28"
+        "0x26": "0"
+        "0x27": "P1"
+        "0x28": "x86_64-nexthop_5010-r0"
+        "0x2B": "Nexthop Systems Inc"
+        "0x2D": "Nexthop AI"
+        "0x2F": "www.nexthop.ai"
+        "0xFD_1": "00 00 F6 62 01 4E 48 2D 53 4D 50 32 35 34 32 30 30 32 46"
+        "0xFD_2": "00 00 F6 62 02 4E 48 32 35 2D 35 30"
+        "0xFE": "0x9C1E51CC"
 
 acs_ixia_dscp:
   hosts:
