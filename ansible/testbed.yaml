@@ -1951,12 +1951,13 @@
   ptf_ip: 10.64.246.102/25
   ptf_ipv6: 2a01:111:e210:b000::a40:f666/121
   server: server_74
-  vm_base: VM74118
+  vm_base: VM74118 # 512VM
   dut:
   - str4-7060x6-512-10
   inv_name: str4
   auto_recover: 'True'
-  comment: zitingguo
+  comment: ptratiya
+  use_converged_peers: true
 
 - conf-name: vms73-t0-7060x6-512-1
   group-name: vms73-4
@@ -2020,18 +2021,19 @@
 
 - conf-name: vms91-t0-7060x6-512-3
   group-name: vms91-1
-  topo: t0-isolated-d32u32s2
+  topo: t0-isolated-d256u256s2
   ptf_image_name: docker-ptf
   ptf: vms91-1
   ptf_ip: 10.64.247.178/25
   ptf_ipv6: 2a01:111:e210:b000::a40:f7b2/121
   server: server_91
-  vm_base: VM91000 # 34VM
+  vm_base: VM91000 # 512VM
   dut:
   - str5-7060x6-512-3
   inv_name: str5
   auto_recover: 'True'
-  comment: zitingguo
+  comment: ptratiya
+  use_converged_peers: true
 
 - conf-name: vms93-t1-7060x6-512-4
   group-name: vms93-5
@@ -2076,7 +2078,8 @@
   - str4-7060x6-512-11
   inv_name: str4
   auto_recover: 'True'
-  comment: zitingguo
+  comment: ptratiya
+  use_converged_peers: true
 
 - conf-name: vms91-t0-7060x6-moby-512-1
   group-name: vms91-4
@@ -4041,7 +4044,7 @@
   inv_name: str5
   comment: wendachu
 
-- conf-name: vms75-t1-7060x6-7
+- conf-name: vms75-t1-7060x6-512-7
   group-name: vms75-5
   topo: t1-isolated-v6-d56u1-lag
   ptf_image_name: docker-ptf
@@ -4548,6 +4551,21 @@
   inv_name: str
   auto_recover: 'True'
   comment: v-ryannikan
+
+- conf-name: ptp-8101-3
+  group-name:
+  topo: ptp-56
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str3-d03u28-8101-01
+  inv_name: str3
+  auto_recover: 'True'
+  comment: v-dtesemma
 
 - conf-name: ptp-8111-1
   group-name:
@@ -5851,3 +5869,18 @@
   inv_name: strtk5
   auto_recover: 'True'
   comment: austinpham
+
+- conf-name: ptp-7050cx3-2
+  group-name:
+  topo: ptp-34
+  ptf_image_name: ''
+  ptf: ''
+  ptf_ip: ''
+  ptf_ipv6: ''
+  server: ''
+  vm_base: ''
+  dut:
+  - str43-dcs-7050cx3-32s-f-d04-u02
+  inv_name: str
+  auto_recover: 'True'
+  comment: v-shankam
