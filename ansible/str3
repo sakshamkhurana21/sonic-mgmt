@@ -5,7 +5,6 @@ all:
         sonic:
         fanout:
         server:
-        self_hosted_azure_agents:
         pdu:
     ptf:
       vars:
@@ -2395,7 +2394,7 @@ sonic_mlnx_4700:
         "0x25": "04/03/2024 22:54:04"
         "0x26": "18"
         "0x28": "x86_64-mlnx_msn4700-r0"
-        "0x29": "2022.08-5.3.0010-9600"
+        "0x29": "2025.05-5.3.0017-9600"
         "0x2B": "Mellanox"
     str3-msn4700-03:
       ansible_host: 10.3.146.11
@@ -2954,10 +2953,3 @@ server:
     str3-acs-serv-77:
       ansible_host: 10.3.146.212
       ansible_hostv6: fe80::cac4b:d6ff:feaf:23d5
-
-# designated nightly agents
-self_hosted_azure_agents:
-  hosts:
-    str3-acs-serv-65:
-      ansible_host: 10.64.246.7
-      ansible_hostv6: 2a01:111:e210:b000::a40:f607
