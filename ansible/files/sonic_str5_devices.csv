@@ -33,8 +33,8 @@ str5-sn5640-2,10.64.246.74/25,Mellanox-SN5640-C512S2,DevSonic,,sonic
 str5-sn5640-fan-2,10.64.246.77/25,Mellanox-SN5640-C512S2,FanoutLeafSonic,,sonic
 str5-sn5640-3,10.64.247.164/25,Mellanox-SN5640-C512S2,DevSonic,,sonic
 str5-sn5640-fan-3,10.64.247.165/25,Mellanox-SN5640-C512S2,FanoutLeafSonic,,sonic
-str5-sn5640-5,10.64.247.169/25,Mellanox-SN5640-C448O16,DevSonic,,sonic
-str5-sn5640-fan-5,10.64.247.170/25,Mellanox-SN5640-C448O16,FanoutLeafSonic,,sonic
+str5-sn5640-5,10.64.247.169/25,Mellanox-SN5640-C512S2,DevSonic,,sonic
+str5-sn5640-fan-5,10.64.247.170/25,Mellanox-SN5640-C512S2,FanoutLeafSonic,,sonic
 str5-sn5640-6,10.64.246.33/25,Mellanox-SN5640-C512S2,DevSonic,,sonic
 str5-sn5640-fan-6,10.64.246.32/25,Mellanox-SN5640-C512S2,FanoutLeafSonic,,sonic
 str5-7260cx3-acs-fan-20,10.64.247.109/26,Arista-7260CX3,FanoutLeaf,,
@@ -47,9 +47,10 @@ str5-nh5010-ut2-1,10.3.152.66/26,NH-5010-F-O64,DevSonic,,sonic
 str5-nh5010-ut2-3,10.3.152.68/26,NH-5010-F-O64,DevSonic,,sonic
 str5-nh5010-ut2-4,10.3.152.73/26,NH-5010-F-O64,DevSonic,,sonic
 str5-nh5010-ut2-5,10.3.152.74/26,NH-5010-F-O64,DevSonic,,sonic
-str5-7280r4-ut2-3,10.3.152.71/26,Arista-7280R4K-32QF-32DF-64O,DevSonic,,sonic
-str5-7280r4-ut2-4,10.3.152.72/26,Arista-7280R4K-32QF-32DF-64O,DevSonic,,sonic
+str5-7280r4-ut2-3,10.3.152.115/26,Arista-7280R4K-32QF-32DF-64O,DevSonic,,sonic
+str5-7280r4-ut2-4,10.3.152.116/26,Arista-7280R4K-32QF-32DF-64O,DevSonic,,sonic
 str5-7060x6-moby-512-4,10.64.247.38/26,Arista-7060X6-16PE-384C-B-O128S2,DevSonic,,sonic
+str5-7060x6-moby-512-5,10.64.247.50/26,Arista-7060X6-16PE-384C-B-O128S2,DevSonic,,sonic
 str43-dcs-7050cx3-32s-f-d04-u01,10.3.146.52/24,Arista-7050CX3-32S-C28S4,DevSonic,,sonic
 pdu-83,10.3.154.83,ApcRPDU,Pdu,snmp,
 pdu-85,10.3.154.84,ApcRPDU,Pdu,snmp,

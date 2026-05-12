@@ -6,6 +6,7 @@ all:
         fanout:
         ixia_chassis:
         l1_switch:
+        pdu:
 
     ptf:
       hosts:
@@ -60,6 +61,7 @@ sonic:
     sonic_str_mlnx_2700:
     sonic_str3_mlnx_4700:
     sonic_nexthop_ut2:
+    sonic_cisco_8101_O8V48:
 
 fanout:
   hosts:
@@ -67,6 +69,17 @@ fanout:
       ansible_host: 10.64.247.6
       os: sonic
       mgmt_subnet_mask_length: 26
+
+pdu:
+  hosts:
+    pdu-107:
+      ansible_host: 10.3.154.108
+      protocol: snmp
+      snmp_rocommunity: public
+    pdu-108:
+      ansible_host: 10.3.154.109
+      protocol: snmp
+      snmp_rocommunity: public
 
 sonic_str_cisco_8111_O32:
   hosts:
@@ -635,6 +648,9 @@ sonic_arista_7060x6_512_stress:
     str-7060x6-512-stress-t0-1:
       ansible_host: 10.64.247.187
       hwsku: Arista-7060X6-64PE-B-C512S2
+    STR-7060x6-RDMA-1:
+      ansible_host: 10.3.146.101
+      hwsku: Arista-7060X6-64PE-B-C512S2
   vars:
     iface_speed: 100000
     mgmt_subnet_mask_length: 25
@@ -662,6 +678,7 @@ sonic_str_mlnx_2700:
   hosts:
     str-msn2700-22:
       ansible_host: 10.64.247.236
+      mgmt_subnet_mask_length: 25
     STR-SN2700-C19-U38:
       ansible_host: 10.3.146.190
   vars:
@@ -722,6 +739,39 @@ sonic_nexthop_ut2:
           - "0x00 0x00 0xF6 0x62 0x01 0x4E 0x48 0x2D 0x53 0x4D 0x50 0x32 0x35 0x34 0x32 0x30 0x30 0x31 0x58"
           - "0x00 0x00 0xF6 0x62 0x02 0x4E 0x48 0x32 0x35 0x2D 0x35 0x30"
         "0xFE": "0x05346DBD"
+
+sonic_cisco_8101_O8V48:
+  vars:
+    hwsku: Cisco-8101-O8V48
+    iface_speed: 100000
+  hosts:
+    str3-8101-04:
+      ansible_host: 10.3.146.35
+      ansible_hostv6: 2a01:111:e210:3000::a03:9223
+      mgmt_subnet_mask_length: 24
+      chassis_id: str3-8101-04
+      model: 8101-32FH-O
+      serial: FLM290805S2
+      base_mac: A4:A5:84:21:72:00
+      syseeprom_info:
+        "0x21": "8101-32FH-O"
+        "0x22": "479009"
+        "0x23": "FLM290805S2"
+        "0x24": "A4:A5:84:21:72:00"
+        "0x26": "3"
+        "0x28": "x86_64-8101_32fh_o-r0"
+        "0x2A": "512"
+        "0x2B": "Cisco"
+        "0x2C": "US"
+        "0x2D": "Cisco"
+        "0xFE": "0xAC201999"
+      plt_reboot_dict:
+        cold:
+          timeout: 600
+          wait: 360
+        watchdog:
+          timeout: 300
+          wait: 360
 
 ixia_chassis:
   hosts:

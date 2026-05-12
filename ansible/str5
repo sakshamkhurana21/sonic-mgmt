@@ -53,6 +53,12 @@ all:
         vms94-2-b:
           ansible_host: 10.64.247.175
           ansible_hostv6: 2a01:111:e210:b000::a40:f7af
+        vms94-3:
+          ansible_host: 10.64.247.166
+          ansible_hostv6: 2a01:111:e210:b000::a40:f7a6
+        vms94-4:
+          ansible_host: 10.64.247.167
+          ansible_hostv6: 2a01:111:e210:b000::a40:f7a7
         vms95-1:
           ansible_host: 10.64.247.176
           ansible_hostv6: 2a01:111:e210:b000::a40:f7b0
@@ -65,6 +71,7 @@ all:
         vms96-2:
           ansible_host: 10.64.247.162
           ansible_hostv6: 2a01:111:e210:b000::a40:f7a2
+
 
     pdu:
       hosts:
@@ -482,20 +489,20 @@ sonic_arista_7060x6_512:
       mgmt_subnet_v6_mask_length: 122
       hwsku: Arista-7060X6-16PE-384C-B-O128S2
       model: DCS-7060X6-16PE-384C-B
-      serial: SSN25202318
-      base_mac: b8:a1:b8:a2:33:47
+      serial: SSN25202372
+      base_mac: b8:a1:b8:a2:ba:d9
       syseeprom_info:
         "0x21": "DCS-7060X6-16PE-384C"
         "0x22": "ASY088971103"
-        "0x23": "SSN25202318"
-        "0x24": "b8:a1:b8:a2:33:47"
-        "0x25": "2025/06/13 22:51:27"
+        "0x23": "SSN25202372"
+        "0x24": "b8:a1:b8:a2:ba:d9"
+        "0x25": "2025/07/10 00:29:04"
         "0x26": "10.11"
         "0x27": "03.00"
         "0x28": "x86_64-arista_7060x6_16pe_384c_b"
         "0x2B": "Arista Networks"
         "0x2D": "Arista Networks"
-        "0x2F": "SSN25202318"
+        "0x2F": "SSN25202372"
 
 sonic_arista_7280dr3_400G:
   vars:
@@ -638,15 +645,15 @@ sonic_nvidia_sn5640:
       ansible_hostv6: 2a01:111:e210:b000::a40:f7a9
       mgmt_subnet_mask_length: 25
       mgmt_subnet_v6_mask_length: 121
-      hwsku: Mellanox-SN5640-C448O16
+      hwsku: Mellanox-SN5640-C512S2
       model: MSN5640
-      serial:
-      base_mac: 50:00:E6:01:D8:0C
+      serial: MT2516600K8E
+      base_mac: 50:00:E6:E6:AC:B0
       syseeprom_info:
         "0x21": "SN5640"
         "0x22": "920-9N52F-09RB-7S0"
-        "0x23": ""
-        "0x24": "50:00:E6:01:D8:0C"
+        "0x23": "MT2516600K8E"
+        "0x24": "50:00:E6:E6:AC:B0"
         "0x25": "03/18/2025 17:10:24"
         "0x26": "16"
         "0x27": "02.00"
@@ -774,26 +781,25 @@ sonic_nexthop_ut2:
       sonic_hwsku: NH-5010-F-O64
       sonic_hw_platform: x86_64-nexthop_5010-r0
       switchids: [0]
-      serial: NH-SMP2544003B
-      base_mac: E8:E4:9D:10:14:2A
+      serial: NH-SPN2602001E
+      base_mac: E8:E4:9D:11:21:D2
       ansible_host: 10.3.152.73
       ansible_hostv6: 2a01:111:e210:86::89
       model: 'NH-5010-F'
       syseeprom_info:
         "0x21": "NH-5010-F"
-        "0x22": "950-00004-01"
-        "0x23": "NH-SMP2544003B"
-        "0x24": "E8:E4:9D:10:14:2A"
+        "0x22": "950-00004-02"
+        "0x23": "NH-SPN2602001E"
+        "0x24": "E8:E4:9D:11:21:D2"
         "0x26": "0"
-        "0x27": "P1"
         "0x28": "x86_64-nexthop_5010-r0"
         "0x2B": "Nexthop Systems Inc"
         "0x2D": "Nexthop AI"
         "0x2F": "www.nexthop.ai"
         "0xFD":
-          - "0x00 0x00 0xF6 0x62 0x01 0x4E 0x48 0x2D 0x53 0x4D 0x50 0x32 0x35 0x34 0x32 0x30 0x30 0x32 0x37"
+          - "0x00 0x00 0xF6 0x62 0x01 0x4E 0x48 0x2D 0x53 0x50 0x4E 0x32 0x35 0x35 0x30 0x30 0x31 0x31 0x48"
           - "0x00 0x00 0xF6 0x62 0x02 0x4E 0x48 0x32 0x35 0x2D 0x35 0x30"
-        "0xFE": "0xCB573DF9"
+        "0xFE": "0xF153EE44"
     str5-nh5010-ut2-5:
       hwsku: NH-5010-F-O64
       sonic_hwsku: NH-5010-F-O64
@@ -868,8 +874,8 @@ sonic_arista_7280r4_400G:
       switchids: [0]
       serial: SSN25462008
       base_mac: b8:a1:b8:a4:37:a2
-      ansible_host: 10.3.152.71
-      ansible_hostv6:
+      ansible_host: 10.3.152.115
+      ansible_hostv6: ::ffff:0a03:9873
       model: 'DCS-7280R4K-32QF-32DF'
       syseeprom_info:
         "0x21": "DCS-7280R4K-32QF-32DF"
@@ -891,8 +897,8 @@ sonic_arista_7280r4_400G:
       switchids: [0]
       serial: SSN25462010
       base_mac: b8:a1:b8:a4:39:23
-      ansible_host: 10.3.152.72
-      ansible_hostv6:
+      ansible_host: 10.3.152.116
+      ansible_hostv6: ::ffff:0a03:9874
       model: 'DCS-7280R4K-32QF-32DF'
       syseeprom_info:
         "0x21": "DCS-7280R4K-32QF-32DF"
