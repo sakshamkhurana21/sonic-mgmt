@@ -611,9 +611,9 @@
   auto_recover: 'True'
   comment: sagummaraj
 
-- conf-name: vms28-t0-8102-04
+- conf-name: vms28-t1-8102-04
   group-name: vms28-5
-  topo: t0-64
+  topo: t1-64-lag
   ptf_image_name: docker-ptf
   ptf: vms28-5
   ptf_ip: 10.64.246.163/25
@@ -626,9 +626,9 @@
   auto_recover: 'True'
   comment: sagummaraj
 
-- conf-name: vms61-t0-8102-01
+- conf-name: vms61-t1-8102-01
   group-name: vms61-2
-  topo: t0-64
+  topo: t1-64-lag
   ptf_image_name: docker-ptf
   ptf: vms61-2
   ptf_ip: 10.64.246.51/25
@@ -1025,15 +1025,15 @@
   auto_recover: 'True'
   comment: deepsinghal
 
-- conf-name: vmsvc3-t2-7250-1
-  group-name: svc3-1
+- conf-name: vmsvc10-t2-7250-1
+  group-name: svc10-1
   topo: t2
   ptf_image_name: docker-ptf
-  ptf: svc3-1
-  ptf_ip: 10.206.144.128/24
-  ptf_ipv6: 2a01:111:e205:100::ace:9080/64
-  server: server_svc_3
-  vm_base: VM30000
+  ptf: svc10-1
+  ptf_ip: 10.206.144.104/24
+  ptf_ipv6: 2a01:111:e205:100::ace:9068/64
+  server: server_svc_10
+  vm_base: VM100000
   dut:
   - svcstr-7250-lc1-1
   - svcstr-7250-lc2-1
@@ -1856,6 +1856,30 @@
   auto_recover: 'True'
   comment: dev
 
+- conf-name: vms1-t1-smartswitch-8102-01
+  group-name: vms1-4
+  topo: t1-28-lag
+  ptf_image_name: docker-ptf
+  ptf: vms1-4
+  ptf_ip: 10.64.246.214/25
+  ptf_ipv6: 2a01:111:e210:b000::a40:f6d6/121
+  server: server_1
+  vm_base: VM01000
+  dut:
+  - str-8102-01
+  - str-8102-01-dpu-0
+  - str-8102-01-dpu-1
+  - str-8102-01-dpu-2
+  - str-8102-01-dpu-3
+  - str-8102-01-dpu-4
+  - str-8102-01-dpu-5
+  - str-8102-01-dpu-6
+  - str-8102-01-dpu-7
+  inv_name: str
+  auto_recover: 'True'
+  is_smartswitch: 'True'
+  comment: lawlee
+
 - conf-name: vms66-t0-4700-1
   group-name: vms66-3
   topo: t0-56-o8v48
@@ -1981,13 +2005,13 @@
 
 - conf-name: vms73-t0-7060x6-2
   group-name: vms73-2
-  topo: ft2-64
+  topo: ft2-o128
   ptf_image_name: docker-ptf
   ptf: vms73-2
   ptf_ip: 10.64.246.80/25
   ptf_ipv6: 2a01:111:e210:b000::a40:f650/121
   server: server_73
-  vm_base: VM73166
+  vm_base: VM73292
   dut:
   - str4-7060x6-64pe-2
   inv_name: str4
@@ -3593,6 +3617,7 @@
   inv_name: str3
   auto_recover: 'True'
   is_smartswitch: 'True'
+  is_lit_mode: 'False'
   comment: paravind
 
 - conf-name: tbtk5-t2-7808-1
@@ -3757,6 +3782,12 @@
     - str2-mlnx-4280-smartswitch-03-dpu-1
     - str2-mlnx-4280-smartswitch-03-dpu-2
     - str2-mlnx-4280-smartswitch-03-dpu-3
+  enabled_dpus:
+    str2-mlnx-4280-smartswitch-02:
+      - dpu_index: 0
+    str2-mlnx-4280-smartswitch-03:
+      - dpu_index: 0
+      - dpu_index: 1
   inv_name: str2
   auto_recover: 'False'
   is_smartswitch: 'True'
@@ -3790,6 +3821,12 @@
     - str2-8102-smartswitch-04-dpu-5
     - str2-8102-smartswitch-04-dpu-6
     - str2-8102-smartswitch-04-dpu-7
+  enabled_dpus:
+    str2-8102-smartswitch-03:
+      - dpu_index: 0
+    str2-8102-smartswitch-04:
+      - dpu_index: 0
+      - dpu_index: 1
   inv_name: str2
   auto_recover: 'False'
   is_smartswitch: 'True'
@@ -5561,6 +5598,21 @@
   vm_base: VM30160
   dut:
   - svcstr-nh5010-ut2-2
+  inv_name: strsvc
+  auto_recover: 'False'
+  comment: yatishkoul
+
+- conf-name: vmsvc-ut2-nh5010-7
+  group-name: svc9-1
+  topo: urh_min_nexthop
+  ptf_image_name: docker-ptf
+  ptf: svc9-1
+  ptf_ip: 10.206.144.98/24
+  ptf_ipv6: 2a01:111:e205:100::ace:9062/64
+  server: server_svc_9
+  vm_base: VM30224
+  dut:
+  - svcstr-nh5010-ut2-7
   inv_name: strsvc
   auto_recover: 'False'
   comment: yatishkoul
