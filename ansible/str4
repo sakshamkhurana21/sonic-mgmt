@@ -218,6 +218,12 @@ all:
         pdu-242:
           ansible_host: 10.3.154.131
           protocol: snmp
+        pdu-243:
+          ansible_host: 10.3.154.60
+          protocol: snmp
+        pdu-244:
+          ansible_host: 10.3.154.61
+          protocol: snmp
 
 fanout:
   hosts:
@@ -336,6 +342,18 @@ fanout:
       os: sonic
       mgmt_subnet_mask_length: 26
       mgmt_subnet_v6_mask_length: 122
+    str4-7060x6-cpo-fanout-1:
+      ansible_host: 10.3.154.239
+      ansible_hostv6: 2a01:111:e210:95::a03:9aef
+      os: sonic
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+    str4-7060x6-cpo-fanout-2:
+      ansible_host: 10.3.154.240
+      ansible_hostv6: 2a01:111:e210:95::a03:9af0
+      os: sonic
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
 
 sonic:
   vars:
@@ -350,6 +368,7 @@ sonic:
     sonic_cisco_8122_O128:
     sonic_arista_7050cx3:
     sonic_nokia_ixr7220_th6p:
+    sonic_micas_cpo:
 
 sonic_arista_7060x6:
   hosts:
@@ -887,23 +906,6 @@ sonic_nokia_ixr7220_th6p:
       mgmt_subnet_v6_mask_length: 64
       hwsku: Nokia-IXR7220-H6-O256
       model: 7220 IXR-H6-128
-      serial: NK261230205
-      base_mac: 88:18:f1:e4:0f:5f
-      syseeprom_info:
-        "0x21": "7220 IXR-H6-128"
-        "0x22": "3HE21649AA0101"
-        "0x23": "NK261230205"
-        "0x24": "88:18:F1:E4:0F:5F"
-        "0x25": "03/19/2026 18:30:00"
-        "0x27": "DEMO UNIT"
-        "0x28": "x86_64-nokia_ixr7220_h6_128-r0"
-    str4-Nokia-7220-Th6p-leaf-1:
-      ansible_host: 10.3.154.233
-      ansible_hostv6: 2a01:111:e210:95::a03:9ae9
-      mgmt_subnet_mask_length: 27
-      mgmt_subnet_v6_mask_length: 64
-      hwsku: Nokia-IXR7220-H6-O256
-      model: 7220 IXR-H6-128
       serial: NK261230208
       base_mac: 88:18:f1:e4:27:5f
       syseeprom_info:
@@ -914,6 +916,65 @@ sonic_nokia_ixr7220_th6p:
         "0x25": "03/19/2026 18:30:00"
         "0x27": "DEMO UNIT"
         "0x28": "x86_64-nokia_ixr7220_h6_128-r0"
+        "0x29": "2025.02-onie_version-nokia_ixrh6-128_v0.6"
+        "0x2A": "1024"
+    str4-Nokia-7220-Th6p-leaf-1:
+      ansible_host: 10.3.154.233
+      ansible_hostv6: 2a01:111:e210:95::a03:9ae9
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      hwsku: Nokia-IXR7220-H6-O256
+      model: 7220 IXR-H6-128
+      serial: NK261230205
+      base_mac: 88:18:f1:e4:0f:5f
+      syseeprom_info:
+        "0x21": "7220 IXR-H6-128"
+        "0x22": "3HE21649AA0101"
+        "0x23": "NK261230205"
+        "0x24": "88:18:F1:E4:0F:5F"
+        "0x25": "03/19/2026 18:30:00"
+        "0x27": "DEMO UNIT"
+        "0x28": "x86_64-nokia_ixr7220_h6_128-r0"
+        "0x29": "2025.02-onie_version-nokia_ixrh6-128_v0.6"
+        "0x2A": "1024"
+
+
+sonic_micas_cpo:
+  hosts:
+    str4-w6940-1:
+      ansible_host: 10.3.154.242
+      ansible_hostv6: 2a01:111:e210:95::a03:9af2
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      hwsku: M2-W6940-64X1-FR4
+      model: BCM789096F-SVK-M2
+      serial: GT8F036761407
+      base_mac: 80:ba:16:01:38:d3
+      syseeprom_info:
+        "0x21": "M2-W6940-128X1-FR4"
+        "0x22": "BCM789096F-SVK-M2"
+        "0x23": "GT8F036761407"
+        "0x24": "80:BA:16:01:38:D3"
+        "0x25": "11/21/2025 17:11:48"
+        "0x27": "R01"
+        "0x28": "x86_64-micas_m2-w6940-128x1-fr4-r0"
+    str4-w6940-2:
+      ansible_host: 10.3.154.243
+      ansible_hostv6: 2a01:111:e210:95::a03:9af3
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      hwsku: M2-W6940-64X1-FR4
+      model: BCM789096F-SVK-M2
+      serial: GT8F036761428
+      base_mac: 80:ba:16:01:39:e7
+      syseeprom_info:
+        "0x21": "M2-W6940-128X1-FR4"
+        "0x22": "BCM789096F-SVK-M2"
+        "0x23": "GT8F036761428"
+        "0x24": "80:BA:16:01:39:E7"
+        "0x25": "11/11/2025 15:53:10"
+        "0x27": "R01"
+        "0x28": "x86_64-micas_m2-w6940-128x1-fr4-r0"
 
 server:
   hosts:
