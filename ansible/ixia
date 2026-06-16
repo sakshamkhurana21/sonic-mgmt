@@ -43,12 +43,6 @@ all:
         pdu-91:
           ansible_host: 10.3.154.89
           protocol: snmp
-        pdu-92:
-          ansible_host: 10.3.154.90
-          protocol: snmp
-        pdu-93:
-          ansible_host: 10.3.154.91
-          protocol: snmp
 
 
 sonic:
@@ -107,6 +101,18 @@ pdu:
       snmp_rocommunity: public
     pdu-146:
       ansible_host: 10.3.155.93
+      protocol: snmp
+      snmp_rocommunity: public
+    pdu-111:
+      ansible_host: 10.3.154.112
+      protocol: snmp
+      snmp_rocommunity: public
+    pdu-93:
+      ansible_host: 10.3.154.91
+      protocol: snmp
+      snmp_rocommunity: public
+    pdu-92:
+      ansible_host: 10.3.154.90
       protocol: snmp
       snmp_rocommunity: public
 
@@ -529,7 +535,7 @@ sonic_str3_cisco_8800_lc:
         watchdog:
           timeout: 600
           wait: 900
-    str3-8800-lc3-1:
+    str3-8800-lc5-1:
       hwsku: Cisco-88-LC0-36FH-O36
       sonic_hwsku: Cisco-88-LC0-36FH-O36
       sonic_hw_platform: x86_64-88_lc0_36fh-r0

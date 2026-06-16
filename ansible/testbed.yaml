@@ -913,7 +913,7 @@
   server: server_69
   vm_base:
   dut:
-  - str3-8800-lc3-1
+  - str3-8800-lc5-1
   - str3-8800-lc2-1
   - str3-8800-sup-2
   inv_name: ixia
@@ -933,7 +933,7 @@
   vm_base:
   dut:
   - str3-8800-lc4-1
-  - str3-8800-lc3-1
+  - str3-8800-lc5-1
   - str3-8800-sup-1
   inv_name: str3
   auto_recover: 'False'
@@ -2272,7 +2272,7 @@
 
 - conf-name: vms77-t1-7060x6-512-11
   group-name: vms77-1
-  topo: t1-isolated-d448u15-lag # 463VM
+  topo: t1-isolated-d56u1-lag #57VM
   ptf_image_name: docker-ptf
   ptf: vms77-1
   ptf_ip: 10.64.246.192/25
@@ -2285,7 +2285,6 @@
   auto_recover: 'True'
   comment: ptratiya
   tb_owner: ptratiya
-  use_converged_peers: true
 
 - conf-name: vms91-t0-7060x6-moby-512-1
   group-name: vms91-4
@@ -2402,7 +2401,7 @@
 
 - conf-name: vms97-t1-sn5640-1
   group-name: vms97-1
-  topo: t1-isolated-d448u15-lag
+  topo: t1-isolated-d56u1-lag
   ptf_image_name: docker-ptf
   ptf: vms97-1
   ptf_ip: 10.64.247.177/25
@@ -2413,12 +2412,12 @@
   - str4-sn5640-6
   inv_name: str4
   auto_recover: 'True'
-  comment: janetcui
-  tb_owner: janetcui
+  comment: kumarsourabh
+  tb_owner: kumarsourabh
 
 - conf-name: vms110-t0-sn5640-1
   group-name: vms110-1
-  topo: t0-isolated-d256u256s2 #258VM
+  topo: t0-isolated-d32u32s2
   ptf_image_name: docker-ptf
   ptf: vms110-1
   ptf_ip: 10.64.247.26/26
@@ -2429,12 +2428,12 @@
   - str5-sn5640-6
   inv_name: str5
   auto_recover: 'True'
-  comment: janetcui
-  tb_owner: janetcui
+  comment: kumarsourabh
+  tb_owner: kumarsourabh
 
-- conf-name: vms93-t2-sn5640-2
+- conf-name: vms93-t1-sn5640-2
   group-name: vms93-3
-  topo: t2-isolated-d128s2
+  topo: t1-isolated-d32u1s2
   ptf_image_name: docker-ptf
   ptf: vms93-3
   ptf_ip: 10.64.247.168/25
@@ -2821,8 +2820,8 @@
   topo: t0-116
   ptf_image_name: docker-ptf
   ptf: ptf4-0
-  ptf_ip: 10.212.65.60/24
-  ptf_ipv6: 2603:10e2:140:3000::12b/122
+  ptf_ip: 172.16.131.10/18
+  ptf_ipv6: 2603:10e2:140:3000::4310/114
   server: server_tk5_4
   vm_base: VM54000
   dut:
@@ -2837,8 +2836,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf4-1
-  ptf_ip: 10.212.65.61/24
-  ptf_ipv6: 2603:10e2:140:3000::12c/122
+  ptf_ip: 172.16.131.11/18
+  ptf_ipv6: 2603:10e2:140:3000::4311/114
   server: server_tk5_4
   vm_base: VM54004
   dut:
@@ -2853,8 +2852,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf4-2
-  ptf_ip: 10.212.65.62/24
-  ptf_ipv6: 2603:10e2:140:3000::12d/122
+  ptf_ip: 172.16.131.12/18
+  ptf_ipv6: 2603:10e2:140:3000::4312/114
   server: server_tk5_4
   vm_base: VM54008
   dut:
@@ -2869,8 +2868,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf4-3
-  ptf_ip: 10.212.65.63/24
-  ptf_ipv6: 2603:10e2:140:3000::12e/122
+  ptf_ip: 172.16.131.13/18
+  ptf_ipv6: 2603:10e2:140:3000::4313/114
   server: server_tk5_4
   vm_base: VM54012
   dut:
@@ -2885,8 +2884,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf4-4
-  ptf_ip: 10.212.65.64/24
-  ptf_ipv6: 2603:10e2:140:3000::12f/122
+  ptf_ip: 172.16.131.14/18
+  ptf_ipv6: 2603:10e2:140:3000::4314/114
   server: server_tk5_4
   vm_base: VM54016
   dut:
@@ -2901,8 +2900,8 @@
   topo: t0-56-d48c8
   ptf_image_name: docker-ptf
   ptf: ptf4-5
-  ptf_ip: 10.212.65.65/24
-  ptf_ipv6: 2603:10e2:140:3000::130/122
+  ptf_ip: 172.16.131.15/18
+  ptf_ipv6: 2603:10e2:140:3000::4315/114
   server: server_tk5_4
   vm_base: VM54084
   dut:
@@ -2917,8 +2916,8 @@
   topo: t0-64
   ptf_image_name: docker-ptf
   ptf: ptf4-6
-  ptf_ip: 10.212.65.66/24
-  ptf_ipv6: 2603:10e2:140:3000::131/122
+  ptf_ip: 172.16.131.16/18
+  ptf_ipv6: 2603:10e2:140:3000::4316/114
   server: server_tk5_4
   vm_base: VM54024
   dut:
@@ -2933,8 +2932,8 @@
   topo: t0-8-lag
   ptf_image_name: docker-ptf
   ptf: ptf4-7
-  ptf_ip: 10.212.65.67/24
-  ptf_ipv6: 2603:10e2:140:3000::132/122
+  ptf_ip: 172.16.131.17/18
+  ptf_ipv6: 2603:10e2:140:3000::4317/114
   server: server_tk5_4
   vm_base: VM54028
   dut:
@@ -2949,8 +2948,8 @@
   topo: t1-lag
   ptf_image_name: docker-ptf
   ptf: ptf4-8
-  ptf_ip: 10.212.65.68/24
-  ptf_ipv6: 2603:10e2:140:3000::133/122
+  ptf_ip: 172.16.131.18/18
+  ptf_ipv6: 2603:10e2:140:3000::4318/114
   server: server_tk5_4
   vm_base: VM54036
   dut:
@@ -2965,8 +2964,8 @@
   topo: t1-lag
   ptf_image_name: docker-ptf
   ptf: ptf4-9
-  ptf_ip: 10.212.65.69/24
-  ptf_ipv6: 2603:10e2:140:3000::134/122
+  ptf_ip: 172.16.131.19/18
+  ptf_ipv6: 2603:10e2:140:3000::4319/114
   server: server_tk5_4
   vm_base: VM54060
   dut:
@@ -3125,8 +3124,8 @@
   topo: t1-lag
   ptf_image_name: docker-ptf
   ptf: ptf6-0
-  ptf_ip: 10.212.65.80/24
-  ptf_ipv6: 2603:10e2:140:3000::110/122
+  ptf_ip: 172.16.176.10/18
+  ptf_ipv6: 2603:10e2:140:3000::7010/114
   server: server_tk5_6
   vm_base: VM52000
   dut:
@@ -3141,8 +3140,8 @@
   topo: t1-lag
   ptf_image_name: docker-ptf
   ptf: ptf6-1
-  ptf_ip: 10.212.65.81/24
-  ptf_ipv6: 2603:10e2:140:3000::111/122
+  ptf_ip: 172.16.176.11/18
+  ptf_ipv6: 2603:10e2:140:3000::7011/114
   server: server_tk5_6
   vm_base: VM52024
   dut:
@@ -3157,8 +3156,8 @@
   topo: t0-116
   ptf_image_name: docker-ptf
   ptf: ptf6-2
-  ptf_ip: 10.212.65.82/24
-  ptf_ipv6: 2603:10e2:140:3000::112/122
+  ptf_ip: 172.16.176.12/18
+  ptf_ipv6: 2603:10e2:140:3000::7012/114
   server: server_tk5_6
   vm_base: VM52048
   dut:
@@ -3173,8 +3172,8 @@
   topo: m0
   ptf_image_name: docker-ptf
   ptf: ptf6-3
-  ptf_ip: 10.212.65.83/24
-  ptf_ipv6: 2603:10e2:140:3000::113/122
+  ptf_ip: 172.16.176.13/18
+  ptf_ipv6: 2603:10e2:140:3000::7013/114
   server: server_tk5_6
   vm_base: VM52052
   dut:
@@ -3189,8 +3188,8 @@
   topo: m0
   ptf_image_name: docker-ptf
   ptf: ptf6-4
-  ptf_ip: 10.212.65.84/24
-  ptf_ipv6: 2603:10e2:140:3000::114/122
+  ptf_ip: 172.16.176.14/18
+  ptf_ipv6: 2603:10e2:140:3000::7014/114
   server: server_tk5_6
   vm_base: VM52060
   dut:
@@ -3205,8 +3204,8 @@
   topo: t1-lag
   ptf_image_name: docker-ptf
   ptf: ptf6-5
-  ptf_ip: 10.212.65.85/24
-  ptf_ipv6: 2603:10e2:140:3000::115/122
+  ptf_ip: 172.16.176.15/18
+  ptf_ipv6: 2603:10e2:140:3000::7015/114
   server: server_tk5_6
   vm_base: VM52064
   dut:
@@ -3221,8 +3220,8 @@
   topo: t1-64-itpac
   ptf_image_name: docker-ptf
   ptf: ptf6-6
-  ptf_ip: 10.212.65.86/24
-  ptf_ipv6: 2603:10e2:140:3000::116/122
+  ptf_ip: 172.16.176.16/18
+  ptf_ipv6: 2603:10e2:140:3000::7016/114
   server: server_tk5_6
   vm_base: VM52088
   dut:
@@ -3237,8 +3236,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf6-7
-  ptf_ip: 10.212.65.87/24
-  ptf_ipv6: 2603:10e2:140:3000::117/122
+  ptf_ip: 172.16.176.17/18
+  ptf_ipv6: 2603:10e2:140:3000::7017/114
   server: server_tk5_6
   vm_base: VM52112
   dut:
@@ -3253,8 +3252,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf6-8
-  ptf_ip: 10.212.65.88/24
-  ptf_ipv6: 2603:10e2:140:3000::118/122
+  ptf_ip: 172.16.176.18/18
+  ptf_ipv6: 2603:10e2:140:3000::7018/114
   server: server_tk5_6
   vm_base: VM52116
   dut:
@@ -3850,8 +3849,8 @@
   topo: t2_2lc_min_ports-masic
   ptf_image_name: docker-ptf
   ptf: ptf10-0
-  ptf_ip: 10.212.65.100/24
-  ptf_ipv6: 2603:10e2:140:3000::10e/122
+  ptf_ip: 172.16.161.6/18
+  ptf_ipv6: 2603:10e2:140:3000::6106/114
   server: server_tk5_10
   vm_base: VM14000
   dut:
@@ -3868,8 +3867,8 @@
   topo: t2
   ptf_image_name: docker-ptf
   ptf: ptf9-0
-  ptf_ip: 10.212.65.97/24
-  ptf_ipv6: 2603:10e2:140:3000::10d/122
+  ptf_ip: 172.16.162.6/18
+  ptf_ipv6: 2603:10e2:140:3000::6206/114
   server: server_tk5_9
   vm_base: VM15000
   dut:
@@ -6235,7 +6234,7 @@
 
 - conf-name: vmstr-ut2-nh5010-5
   group-name: vms96-2
-  topo: t2_single_node_min_nexthop_ut2
+  topo: urh_min_nexthop
   ptf_image_name: docker-ptf
   ptf: vms96-2
   ptf_ip: 10.64.247.162/25
@@ -6817,3 +6816,21 @@
   auto_recover: 'True'
   comment: tbtk5a-t0-7260-1
   tb_owner: xiwang5
+
+- conf-name: tor-dualtor3
+  group-name: tor-dualtor
+  topo: dualtor-aa
+  ptf_image_name: docker-ptf
+  ptf: ptf_dtor3
+  ptf_ip: 10.255.0.210/24
+  ptf_ipv6: 2001:db8:1::20/64
+  prober_type: hardware
+  server: server_1
+  vm_base: VM0100
+  dut:
+    - dtor3-dut0
+    - dtor3-dut1
+  inv_name: lab
+  auto_recover: 'True'
+  netns_mgmt_ip: 10.255.0.211/16
+  comment: dualtor setup example
