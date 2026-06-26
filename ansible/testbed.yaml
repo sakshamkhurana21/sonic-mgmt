@@ -1734,10 +1734,10 @@
   topo: tgen-t0-3-32
   ptf_image_name: docker-keysight-api-server
   ptf_imagetag: 10.80.2412.176
-  ptf: ixia-apiserver4
-  ptf_ip: 10.64.246.126/25
+  ptf: ixia-apiserver2
+  ptf_ip: 10.64.246.229/25
   ptf_ipv6:
-  server: server_20
+  server: server_2
   vm_base:
   dut:
   - str-msn2700-22
@@ -2704,8 +2704,8 @@
   topo: ptf32
   ptf_image_name: docker-ptf
   ptf: ptf3-0
-  ptf_ip: 10.212.65.50/24
-  ptf_ipv6: 2603:10e2:140:3000::121/122
+  ptf_ip: 172.16.130.10/18
+  ptf_ipv6: 2603:10e2:140:3000::4210/114
   server: server_tk5_3
   vm_base:
   dut:
@@ -2720,8 +2720,8 @@
   topo: t1-56-lag
   ptf_image_name: docker-ptf
   ptf: ptf3-1
-  ptf_ip: 10.212.65.51/24
-  ptf_ipv6: 2603:10e2:140:3000::122/122
+  ptf_ip: 172.16.130.11/18
+  ptf_ipv6: 2603:10e2:140:3000::4211/114
   server: server_tk5_3
   vm_base: VM53096
   dut:
@@ -2736,8 +2736,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf3-2
-  ptf_ip: 10.212.65.52/24
-  ptf_ipv6: 2603:10e2:140:3000::123/122
+  ptf_ip: 172.16.130.12/18
+  ptf_ipv6: 2603:10e2:140:3000::4212/114
   server: server_tk5_3
   vm_base: VM53004
   dut:
@@ -2752,8 +2752,8 @@
   topo: t0
   ptf_image_name: docker-ptf
   ptf: ptf3-3
-  ptf_ip: 10.212.65.53/24
-  ptf_ipv6: 2603:10e2:140:3000::124/122
+  ptf_ip: 172.16.130.13/18
+  ptf_ipv6: 2603:10e2:140:3000::4213/114
   server: server_tk5_3
   vm_base: VM53008
   dut:
@@ -2768,8 +2768,8 @@
   topo: m0
   ptf_image_name: docker-ptf
   ptf: ptf3-4
-  ptf_ip: 10.212.65.54/24
-  ptf_ipv6: 2603:10e2:140:3000::125/122
+  ptf_ip: 172.16.130.14/18
+  ptf_ipv6: 2603:10e2:140:3000::4214/114
   server: server_tk5_3
   vm_base: VM53120
   dut:
@@ -2784,8 +2784,8 @@
   topo: t0-64
   ptf_image_name: docker-ptf
   ptf: ptf3-5
-  ptf_ip: 10.212.65.55/24
-  ptf_ipv6: 2603:10e2:140:3000::126/122
+  ptf_ip: 172.16.130.15/18
+  ptf_ipv6: 2603:10e2:140:3000::4215/114
   server: server_tk5_3
   vm_base: VM53016
   dut:
@@ -2800,8 +2800,8 @@
   topo: t0-64
   ptf_image_name: docker-ptf
   ptf: ptf3-6
-  ptf_ip: 10.212.65.56/24
-  ptf_ipv6: 2603:10e2:140:3000::127/122
+  ptf_ip: 172.16.130.16/18
+  ptf_ipv6: 2603:10e2:140:3000::4216/114
   server: server_tk5_3
   vm_base: VM53020
   dut:
@@ -2816,8 +2816,8 @@
   topo: t0-116
   ptf_image_name: docker-ptf
   ptf: ptf3-7
-  ptf_ip: 10.212.65.57/24
-  ptf_ipv6: 2603:10e2:140:3000::128/122
+  ptf_ip: 172.16.130.17/18
+  ptf_ipv6: 2603:10e2:140:3000::4217/114
   server: server_tk5_3
   vm_base: VM53024
   dut:
@@ -2832,8 +2832,8 @@
   topo: t1-64-lag
   ptf_image_name: docker-ptf
   ptf: ptf3-9
-  ptf_ip: 10.212.65.59/24
-  ptf_ipv6: 2603:10e2:140:3000::12a/122
+  ptf_ip: 172.16.130.19/18
+  ptf_ipv6: 2603:10e2:140:3000::4219/114
   server: server_tk5_3
   vm_base: VM53072
   dut:
@@ -6100,22 +6100,22 @@
   comment: v-shankam
   tb_owner: v-shankam
 
-- conf-name: vms69-t1-smartswitch-4280-22
-  group-name: vms69-2
+- conf-name: vms1-t1-smartswitch-4280-01
+  group-name: vms1-8
   topo: t1-28-lag
   ptf_image_name: docker-ptf
-  ptf: vms69-2
-  ptf_ip: 10.64.247.103/26
-  ptf_ipv6: 2a01:111:e210:b000::a40:f767/122
-  server: server_69
-  vm_base: VM69072
+  ptf: vms1-8
+  ptf_ip: 10.64.246.215/25
+  ptf_ipv6: 2a01:111:e210:b000::a40:f6d7/121
+  server: server_1
+  vm_base: VM01072
   dut:
-    - str3-nvidia-4280-E04-U22
-    - str3-nvidia-4280-E04-U22-dpu-0
-    - str3-nvidia-4280-E04-U22-dpu-1
-    - str3-nvidia-4280-E04-U22-dpu-2
-    - str3-nvidia-4280-E04-U22-dpu-3
-  inv_name: str3
+    - str-msn4280-01
+    - str-msn4280-01-dpu-0
+    - str-msn4280-01-dpu-1
+    - str-msn4280-01-dpu-2
+    - str-msn4280-01-dpu-3
+  inv_name: str
   auto_recover: 'True'
   is_smartswitch: 'True'
   is_lit_mode: 'True'
@@ -6181,14 +6181,14 @@
   tb_owner: yatishkoul
 
 - conf-name: vmstr-ut2-7280r4-3
-  group-name: vms94-3
+  group-name: vms98-1
   topo: t2_single_node_min_first_6ports
   ptf_image_name: docker-ptf
-  ptf: vms94-3
-  ptf_ip: 10.64.247.166/25
-  ptf_ipv6: 2a01:111:e210:b000::a40:f7a6/122
-  server: server_94
-  vm_base: VM94520
+  ptf: vms98-1
+  ptf_ip: 10.64.247.207/25
+  ptf_ipv6: 2a01:111:e210:b000::a40:f7cf/121
+  server: server_98
+  vm_base: VM98001
   dut:
   - str5-7280r4-ut2-3
   inv_name: str5
@@ -6197,14 +6197,14 @@
   tb_owner: yatishkoul
 
 - conf-name: vmstr-ut2-7280r4-4
-  group-name: vms94-4
+  group-name: vms98-2
   topo: t2_single_node_min_first_6ports
   ptf_image_name: docker-ptf
-  ptf: vms94-4
-  ptf_ip: 10.64.247.167/25
-  ptf_ipv6: 2a01:111:e210:b000::a40:f7a7/122
-  server: server_94
-  vm_base: VM94525
+  ptf: vms98-2
+  ptf_ip: 10.64.247.208/25
+  ptf_ipv6: 2a01:111:e210:b000::a40:f7d0/121
+  server: server_98
+  vm_base: VM98006
   dut:
   - str5-7280r4-ut2-4
   inv_name: str5

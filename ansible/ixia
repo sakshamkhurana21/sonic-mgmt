@@ -19,6 +19,9 @@ all:
         ixia-apiserver4:
           ansible_host: 10.64.246.126
           version: ixnetworkweb_10.80.2412.176
+        ixia-apiserver2:
+          ansible_host: 10.64.246.229
+          version: ixnetworkweb_10.80.2412.176
         str-aresone-api-serv-01:
           ansible_host: 10.64.246.230
           version: ixnetworkweb_10.25.2405.106
@@ -702,6 +705,7 @@ sonic_str3_arista_7060_cx32:
       model: DCS-7060CX-32S
       serial: SGD20436388
       base_mac: d4:af:f7:ff:70:48
+      chassis_id: str3-7060-acs-3
   vars:
     iface_speed: 100000
 
@@ -710,9 +714,11 @@ sonic_micas_cpo:
     str4-w6940-1:
       ansible_host: 10.3.154.242
       hwsku: M2-W6940-64X1-FR4
+      chassis_id: str4-w6940-1
     str4-w6940-2:
       ansible_host: 10.3.154.243
       hwsku: M2-W6940-64X1-FR4
+      chassis_id: str4-w6940-2
   vars:
     iface_speed: 800000
     mgmt_subnet_mask_length: 27
@@ -746,7 +752,6 @@ sonic_str_mlnx_2700:
   vars:
     hwsku: Mellanox-SN2700
     iface_speed: 100000
-    msft_an_enabled: True
 
 sonic_str3_mlnx_4700:
   hosts:
