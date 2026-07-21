@@ -11,7 +11,7 @@ all:
         ansible_ssh_user: root
         ansible_ssh_pass: root
       hosts:
-        vms70-1:
+        vms70-1:  # ixia-apiserver70
           ansible_host: 10.64.246.109
           ansible_hostv6: 2a01:111:e210:b000::a40:f66d
         vms70-2:
@@ -83,6 +83,9 @@ all:
         vms13-6:
           ansible_host: 10.64.247.183
           ansible_hostv6: 2a01:111:e210:b000::a40:f7b7
+        vms13-7:
+          ansible_host: 10.64.247.144
+          ansible_hostv6: 2a01:111:e210:b000::a40:f790
         vms13-8:
           ansible_host: 10.64.247.181
           ansible_hostv6: 2a01:111:e210:b000::a40:f7b5
@@ -348,6 +351,11 @@ fanout:
       os: sonic
       mgmt_subnet_mask_length: 27
       mgmt_subnet_v6_mask_length: 64
+    str4-nh4210-leaf-01:
+      ansible_host: 10.3.154.244
+      os: sonic
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
 
 sonic:
   vars:
@@ -363,6 +371,7 @@ sonic:
     sonic_arista_7050cx3:
     sonic_nokia_ixr7220_th6p:
     sonic_micas_cpo:
+    sonic_nexthop_nh4210:
 
 sonic_arista_7060x6:
   hosts:
@@ -544,13 +553,13 @@ sonic_arista_7060x6_512:
       hwsku: Arista-7060X6-64PE-B-C448O16
       model: DCS-7060X6-64PE-B
       serial: HBG251204WB
-      base_mac: d8:06:f3:37:42:e6
+      base_mac: d8:06:f3:5a:a9:b1
       syseeprom_info:
         '0x21': 'DCS-7060X6-64PE-B'
         '0x22': 'ASY0899401A0'
         '0x23': 'HBG251204WB'
-        '0x24': 'd8:06:f3:37:42:e6'
-        '0x25': '2025/04/23 11:08:02'
+        '0x24': 'd8:06:f3:5a:a9:b1'
+        '0x25': '2025/03/23 09:28:04'
         '0x26': '01'
         '0x27': '02.00'
         '0x28': 'x86_64-arista_7060x6_64pe_b'
@@ -894,8 +903,8 @@ sonic_arista_7050cx3:
 sonic_nokia_ixr7220_th6p:
   hosts:
     str4-Nokia-7220-Th6p-1:
-      ansible_host: 10.3.154.234
-      ansible_hostv6: 2a01:111:e210:95::a03:9aea
+      ansible_host: 10.3.157.14
+      ansible_hostv6: 2a01:111:e210:ac::a03:9d0e
       mgmt_subnet_mask_length: 27
       mgmt_subnet_v6_mask_length: 64
       hwsku: Nokia-IXR7220-H6-O256
@@ -912,6 +921,11 @@ sonic_nokia_ixr7220_th6p:
         "0x28": "x86_64-nokia_ixr7220_h6_128-r0"
         "0x29": "2025.02-onie_version-nokia_ixrh6-128_v0.6"
         "0x2A": "1024"
+    str4-Nokia-7220-Th6p-1-bmc:
+      ansible_host: 10.3.157.13
+      mgmt_subnet_mask_length: 27
+      hwsku: Nokia-IXR7220-H6-P128
+      serial: NK261230208
     str4-Nokia-7220-Th6p-leaf-1:
       ansible_host: 10.3.154.233
       ansible_hostv6: 2a01:111:e210:95::a03:9ae9
@@ -971,6 +985,41 @@ sonic_micas_cpo:
         "0x25": "11/11/2025 15:53:10"
         "0x27": "R01"
         "0x28": "x86_64-micas_m2-w6940-128x1-fr4-r0"
+
+sonic_nexthop_nh4210:
+  hosts:
+    str4-nh4210-01:
+      ansible_host: 10.3.154.238
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      hwsku: NH-4210-F-O256
+      model: NH-4210-F
+      serial: NH-NHQ26150001
+      base_mac: E8:E4:9D:13:1F:E8
+      syseeprom_info:
+        "0x21": "NH-4210-F"
+        "0x22": "950-00013-01"
+        "0x23": "NH-NHQ26150001"
+        "0x24": "E8:E4:9D:13:1F:E8"
+        "0x26": "0"
+        "0x28": "x86_64-nexthop_4210-r0021"
+        "0x2B": "Nexthop Systems Inc"
+    str4-nh4210-leaf-01:
+      ansible_host: 10.3.154.244
+      mgmt_subnet_mask_length: 27
+      mgmt_subnet_v6_mask_length: 64
+      hwsku: NH-4210-F-O256
+      model: NH-4210-F
+      serial: NH-NHQ26170003
+      base_mac: E8:E4:9D:13:38:18
+      syseeprom_info:
+        "0x21": "NH-4210-F"
+        "0x22": "950-00013-01"
+        "0x23": "NH-NHQ26170003"
+        "0x24": "E8:E4:9D:13:38:18"
+        "0x26": "0"
+        "0x28": "x86_64-nexthop_4210-r0021"
+        "0x2B": "Nexthop Systems Inc"
 
 server:
   hosts:

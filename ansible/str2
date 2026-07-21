@@ -2415,6 +2415,9 @@ sonic_cisco_8102:
         "0x2C": "US"
         "0xFE": "0x4F61249F"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2422,9 +2425,6 @@ sonic_cisco_8102:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2450,6 +2450,9 @@ sonic_cisco_8102:
         "0x2C": "US"
         "0xFE": "0xB8048CFF"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2457,9 +2460,6 @@ sonic_cisco_8102:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2485,6 +2485,9 @@ sonic_cisco_8102:
         "0x2C": "US"
         "0xFE": "0x9C7FE4A7"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2492,9 +2495,6 @@ sonic_cisco_8102:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2520,6 +2520,9 @@ sonic_cisco_8102:
         "0x2C": "US"
         "0xFE": "0x2D956AA0"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2527,9 +2530,6 @@ sonic_cisco_8102:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2675,6 +2675,9 @@ sonic_cisco_8101:
         "0x2D": "Cisco"
         "0xFE": "0xFF3F24DF"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2682,9 +2685,6 @@ sonic_cisco_8101:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2710,6 +2710,9 @@ sonic_cisco_8101:
         "0x2D": "Cisco"
         "0xFE": "0x5A3CC181"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2717,9 +2720,6 @@ sonic_cisco_8101:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2752,6 +2752,9 @@ sonic_cisco_8101_tornado_O8V48:
         "0x2D": "Cisco"
         "0xFE": "0x842AA000"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2759,9 +2762,6 @@ sonic_cisco_8101_tornado_O8V48:
           timeout: 600
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 600
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 600
           wait: 600
         power off:
@@ -2794,6 +2794,9 @@ sonic_cisco_8101_tornado_C32:
         "0x2D": "Cisco"
         "0xFE": "0x7C41E6E3"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2801,9 +2804,6 @@ sonic_cisco_8101_tornado_C32:
           timeout: 420
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 300
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
         power off:
@@ -2829,6 +2829,9 @@ sonic_cisco_8101_tornado_C32:
         "0x2D": "Cisco"
         "0xFE": "0x3662BB7C"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2836,9 +2839,6 @@ sonic_cisco_8101_tornado_C32:
           timeout: 420
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 300
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
         power off:
@@ -2864,6 +2864,9 @@ sonic_cisco_8101_tornado_C32:
         "0x2D": "Cisco"
         "0xFE": "0x400EDB4E"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2871,9 +2874,6 @@ sonic_cisco_8101_tornado_C32:
           timeout: 420
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 300
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
         power off:
@@ -2899,6 +2899,9 @@ sonic_cisco_8101_tornado_C32:
         "0x2D": "Cisco"
         "0xFE": "0x200C6EE7"
       plt_reboot_dict:
+        Kernel Panic:
+          timeout: 600
+          wait: 600
         cold:
           timeout: 600
           wait: 600
@@ -2906,9 +2909,6 @@ sonic_cisco_8101_tornado_C32:
           timeout: 420
           wait: 600
         acl/test_acl.py::TestAclWithReboot:
-          timeout: 300
-          wait: 600
-        platform_tests/test_reload_config.py::test_reload_configuration_checks:
           timeout: 300
           wait: 600
         power off:
@@ -2925,14 +2925,14 @@ sonic_cisco_8223:
       ansible_hostv6: 2a01:111:e210:3000::a03:96A4
       mgmt_subnet_mask_length: 27
       model: 8223-64EH-MO
-      serial: FLM293338ZW
-      base_mac: FC:58:9A:1E:76:5C
+      serial: FLM301741AU
+      base_mac: F4:B8:21:0A:B0:00
       macsec_card: True
       syseeprom_info:
         "0x21": "8223-64EH-MO"
         "0x22": "ECI123"
-        "0x23": "FLM293338ZW"
-        "0x24": "FC:58:9A:1E:76:5C"
+        "0x23": "FLM301741AU"
+        "0x24": "F4:B8:21:0A:B0:00"
         "0x26": "0"
         "0x28": "x86_64-8223_64e_mo-r0"
         "0x2A": "1024"

@@ -706,6 +706,16 @@ sonic_cisco_8102:
         "0x2D": "Cisco"
         "0x2C": "US"
         "0xFE": "0xC6B0FD08"
+      plt_reboot_dict:
+        cold:
+          timeout: 600
+          wait: 600
+        Kernel Panic:
+          timeout: 600
+          wait: 600
+        power off:
+          timeout: 600
+          wait: 600
 
 sonic_mlnx_sn3800:
   vars:
@@ -813,6 +823,7 @@ sonic_nokia_sup:
         'supervisor':
         - SUPERVISOR1
         'psus':
+        - PSU3
         - PSU8
         - PSU9
         - PSU10

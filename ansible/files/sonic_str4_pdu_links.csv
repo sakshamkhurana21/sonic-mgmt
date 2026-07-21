@@ -52,7 +52,7 @@ pdu-120,46,str4-7060x6-512-8,PSU1
 pdu-119,46,str4-7060x6-512-8,PSU2
 pdu-85,14,str4-7060x6-512-9,PSU1
 pdu-85,6,str4-7060x6-512-9,PSU2
-pdu-97,20,str4-7060x6-512-11,PSU1
+pdu-97,40,str4-7060x6-512-11,PSU1
 pdu-242,20,str4-7060x6-512-11,PSU2
 pdu-242,45,str4-7060x6-512-fan-11,PSU2
 pdu-98,25,str4-7060x6-512-12,PSU1
@@ -83,3 +83,11 @@ pdu-k09-a,12,str4-w6940-2,PSU1
 pdu-k09-b,12,str4-w6940-2,PSU2
 pdu-k09-a,10,str4-w6940-1,PSU1
 pdu-k09-b,10,str4-w6940-1,PSU2
+pdu-k08-a,32,str4-nh4210-01,PSU1
+pdu-k08-a,34,str4-nh4210-01,PSU2
+pdu-k08-a,35,str4-nh4210-01,PSU3
+pdu-k08-b,34,str4-nh4210-01,PSU4
+pdu-k09-a,14,str4-nh4210-leaf-01,PSU1
+pdu-k09-a,15,str4-nh4210-leaf-01,PSU2
+pdu-k09-b,14,str4-nh4210-leaf-01,PSU3
+pdu-k09-b,15,str4-nh4210-leaf-01,PSU4
