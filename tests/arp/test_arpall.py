@@ -32,6 +32,7 @@ def test_arp_unicast_reply(common_setup_teardown, intfs_for_test, enum_frontend_
     # VPP software dataplane does not pad ARP replies to Ethernet minimum frame size
     if duthost.facts['asic_type'] == 'vpp' and duthost.facts['platform'] == 'x86_64-kvm_x86_64-r0':
         params['no_padding'] = True
+        params['request_retries'] = 5
     log_file = "/tmp/arptest.VerifyUnicastARPReply.{0}.log".format(datetime.now().strftime("%Y-%m-%d-%H:%M:%S"))
     ptf_runner(ptfhost, 'ptftests', "arptest.VerifyUnicastARPReply", '/root/ptftests',
                params=params, log_file=log_file, is_python3=True)

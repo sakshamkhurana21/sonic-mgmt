@@ -100,8 +100,17 @@ class VerifyUnicastARPReply(ACSDataplaneTest):
                                     hw_tgt='00:06:07:08:09:00',
                                     hw_snd=acs_mac,
                                     )
-        send_packet(self, self.test_params['port'], pkt)
-        verify_packet(self, exp_pkt, self.test_params['port'])
+        request_retries = self.test_params.get('request_retries', 1)
+        last_error = None
+        for _ in range(request_retries):
+            send_packet(self, self.test_params['port'], pkt)
+            try:
+                verify_packet(self, exp_pkt, self.test_params['port'])
+                return
+            except AssertionError as error:
+                last_error = error
+
+        raise last_error
 
 
 class WrongIntNoReply(ACSDataplaneTest):
