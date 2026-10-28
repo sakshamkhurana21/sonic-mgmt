@@ -54,6 +54,7 @@ stages:
       RETRY_TIMES: ${{ parameters.RETRY_TIMES }}
       STOP_ON_FAILURE: ${{ parameters.TEST_PLAN_STOP_ON_FAILURE }}
       TEST_PLAN_NUM: ${{ parameters.TEST_PLAN_NUM }}
+      MGMT_COMMIT_HASH: $(Build.SourceVersion)
       INCLUDE_JOBS: ${{ parameters.INCLUDE_JOBS }}
 
 - stage: Test_round_2
@@ -67,6 +68,7 @@ stages:
       RETRY_TIMES: ${{ parameters.RETRY_TIMES }}
       STOP_ON_FAILURE: ${{ parameters.TEST_PLAN_STOP_ON_FAILURE }}
       TEST_PLAN_NUM: ${{ parameters.TEST_PLAN_NUM }}
+      MGMT_COMMIT_HASH: $(Build.SourceVersion)
       INCLUDE_JOBS: ${{ parameters.INCLUDE_JOBS }}
 
 - stage: Test_round_3
@@ -80,6 +82,7 @@ stages:
       RETRY_TIMES: ${{ parameters.RETRY_TIMES }}
       STOP_ON_FAILURE: ${{ parameters.TEST_PLAN_STOP_ON_FAILURE }}
       TEST_PLAN_NUM: ${{ parameters.TEST_PLAN_NUM }}
+      MGMT_COMMIT_HASH: $(Build.SourceVersion)
       INCLUDE_JOBS: ${{ parameters.INCLUDE_JOBS }}
 
 - stage: Test_round_4
@@ -93,4 +96,5 @@ stages:
       RETRY_TIMES: ${{ parameters.RETRY_TIMES }}
       STOP_ON_FAILURE: ${{ parameters.TEST_PLAN_STOP_ON_FAILURE }}
       TEST_PLAN_NUM: ${{ parameters.TEST_PLAN_NUM }}
+      MGMT_COMMIT_HASH: $(Build.SourceVersion)
       INCLUDE_JOBS: ${{ parameters.INCLUDE_JOBS }}
